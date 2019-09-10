@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARGOAGRO", "ARGOAGRO\ARGOAGRO\ARGOAGRO.csproj", "{87DB394C-F4EA-42FE-BC19-25458FE8975E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARGOAGRO.Android", "ARGOAGRO\ARGOAGRO.Android\ARGOAGRO.Android.csproj", "{FAC1DA26-8C71-41B8-98B8-B79CF9C24F1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87DB394C-F4EA-42FE-BC19-25458FE8975E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DB394C-F4EA-42FE-BC19-25458FE8975E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DB394C-F4EA-42FE-BC19-25458FE8975E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DB394C-F4EA-42FE-BC19-25458FE8975E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC1DA26-8C71-41B8-98B8-B79CF9C24F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC1DA26-8C71-41B8-98B8-B79CF9C24F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC1DA26-8C71-41B8-98B8-B79CF9C24F1C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FAC1DA26-8C71-41B8-98B8-B79CF9C24F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC1DA26-8C71-41B8-98B8-B79CF9C24F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC1DA26-8C71-41B8-98B8-B79CF9C24F1C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88198BB1-1624-4DE8-AE53-9B28599684A7}
+	EndGlobalSection
+EndGlobal
