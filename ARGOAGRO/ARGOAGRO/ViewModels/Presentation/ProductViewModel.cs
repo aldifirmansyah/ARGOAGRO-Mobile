@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ARGOAGRO.ViewModels.Presentation
+{
+    public class ProductViewModel
+    {
+        public int ID { get; set; }
+        public int TypeID { get; set; }
+        public string ImageName { get; set; }
+        public string ProductName { get; set; }
+        public string ProductBrand { get; set; }
+        public string Description { get; set; }
+        public int Rating { get; set; }
+        public int UnitPrice { get; set; }
+        public string UnitType { get; set; }
+        public int TotalReview { get; set; }
+        public int TotalSold { get; set; }
+        public string ProductCode { get; set; }
+        public string Terms { get; set; }
+        public IEnumerable<StoreViewModel> Stores { get; set; }
+    }
+}
