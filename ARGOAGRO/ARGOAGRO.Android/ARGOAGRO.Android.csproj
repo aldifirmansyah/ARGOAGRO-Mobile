@@ -124,7 +124,7 @@
     <AndroidResource Include="Resources\drawable\jne.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\kokoa.png" />
+    <AndroidResource Include="Resources\drawable\kakao.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\kontak_kami_header.jpg" />
