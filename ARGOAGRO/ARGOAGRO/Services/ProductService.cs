@@ -42,6 +42,10 @@ namespace ARGOAGRO.Services
             return result;
         }
 
+        /// <summary>
+        /// get all product without stores attribute
+        /// </summary>
+        /// <returns>IENumerable of ProductViewModel</returns>
         public IEnumerable<ProductViewModel> GetAllProduct()
         {
             IEnumerable<ProductViewModel> result = new List<ProductViewModel>()
