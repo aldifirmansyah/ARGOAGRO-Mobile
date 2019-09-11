@@ -35,7 +35,7 @@ namespace ARGOAGRO.Services
                 new ProductTypeViewModel()
                 {
                     ID = 4,
-                    ImageName = "promo.jpg"
+                    ImageName = "promo.jpg",
                     Name = "Promo"
                 }
             };
