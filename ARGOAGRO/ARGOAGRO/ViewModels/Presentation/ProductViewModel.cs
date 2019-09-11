@@ -20,5 +20,6 @@ namespace ARGOAGRO.ViewModels.Presentation
         public string ProductCode { get; set; }
         public string Terms { get; set; }
         public IEnumerable<StoreViewModel> Stores { get; set; }
+        public int Discount { get; set; }
     }
 }
