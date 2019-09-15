@@ -192,5 +192,20 @@ namespace ARGOAGRO.Services
 
             return result;
         }
+
+        public async Task CreateProductReview(ProductReviewViewModel obj)
+        {
+            await _localDbConnection.CreateTableAsync<ProductReviewModel>();
+            ProductReviewModel productReviewModel = new ProductReviewModel()
+            {
+                ProductID = obj.ProductID,
+                FullName = obj.FullName,
+                Email = obj.Email,
+                Location = obj.Location,
+                Description = obj.Description,
+                Rating = obj.Rating
+            };
+            await _localDbConnection.InsertAsync(productReviewModel);
+        }
     }
 }
