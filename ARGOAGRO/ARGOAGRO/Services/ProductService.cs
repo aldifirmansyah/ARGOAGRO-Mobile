@@ -1,12 +1,20 @@
-﻿using ARGOAGRO.ViewModels.Presentation;
+﻿using ARGOAGRO.Models;
+using ARGOAGRO.ViewModels.Presentation;
+using ePMPro.Persistence;
+using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace ARGOAGRO.Services
 {
     public class ProductService
     {
+        private SQLiteAsyncConnection _localDbConnection = DependencyService.Get<ISQLiteDb>().GetConnection();
+
         /// <summary>
         /// Get all product type
         /// </summary>
@@ -119,6 +127,64 @@ namespace ARGOAGRO.Services
                     Discount = 20
                 }
             };
+            return result;
+        }
+
+        public async Task<IEnumerable<ProductReviewViewModel>> GetProductReviewByProductID(int productID)
+        {
+            List<ProductReviewViewModel> productReviewDummies = new List<ProductReviewViewModel>()
+            {
+                new ProductReviewViewModel()
+                {
+                    ProductID = 1,
+                    FullName = "Intan Dwi Nuraini",
+                    Email = "intandwi@gmail.com",
+                    Location = "Jakarta",
+                    Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
+                    "karena packing saat sudah sampai sedikit rusak",
+                    Rating = 5
+                },
+                new ProductReviewViewModel()
+                {
+                    ProductID = 2,
+                    FullName = "Intan Dwi Nuraini",
+                    Email = "intandwi@gmail.com",
+                    Location = "Jakarta",
+                    Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
+                    "karena packing saat sudah sampai sedikit rusak",
+                    Rating = 4
+                },
+                new ProductReviewViewModel()
+                {
+                    ProductID = 3,
+                    FullName = "Intan Dwi Nuraini",
+                    Email = "intandwi@gmail.com",
+                    Location = "Jakarta",
+                    Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
+                    "karena packing saat sudah sampai sedikit rusak",
+                    Rating = 5
+                },
+                new ProductReviewViewModel()
+                {
+                    ProductID = 4,
+                    FullName = "Intan Dwi Nuraini",
+                    Email = "intandwi@gmail.com",
+                    Location = "Jakarta",
+                    Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
+                    "karena packing saat sudah sampai sedikit rusak",
+                    Rating = 4
+                }
+            };
+
+            var result = new List<ProductReviewViewModel>(productReviewDummies.Where(data => data.ProductID == productID));
+
+            await _localDbConnection.CreateTableAsync<ProductReviewModel>();
+            var productReviewModels = await _localDbConnection.Table<ProductReviewModel>().Where(data => data.ProductID == productID).ToListAsync();
+            foreach (ProductReviewModel obj in productReviewModels)
+            {
+                result.Add(new ProductReviewViewModel(obj));
+            }
+
             return result;
         }
     }
