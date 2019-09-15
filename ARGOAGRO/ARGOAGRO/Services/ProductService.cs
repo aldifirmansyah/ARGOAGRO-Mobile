@@ -130,6 +130,11 @@ namespace ARGOAGRO.Services
             return result;
         }
 
+        /// <summary>
+        /// Get All Product Review regarding a product using its ID
+        /// </summary>
+        /// <param name="productID">The ID of a product</param>
+        /// <returns>IENumerable of Product ReviewViewModel</returns>
         public async Task<IEnumerable<ProductReviewViewModel>> GetProductReviewByProductID(int productID)
         {
             List<ProductReviewViewModel> productReviewDummies = new List<ProductReviewViewModel>()
