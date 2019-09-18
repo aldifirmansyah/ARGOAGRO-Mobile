@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace ARGOAGRO.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class HomePageViewModel : ViewModelBase
     {
         public string Description
         {
@@ -33,7 +33,7 @@ namespace ARGOAGRO.ViewModels
             get { return ImageSource.FromResource("ARGOAGRO.Img.aneka_buah.png"); }
         }
 
-        public MainPageViewModel(INavigationService navigationService)
+        public HomePageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Main Page";
