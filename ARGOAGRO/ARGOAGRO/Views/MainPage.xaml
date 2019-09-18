@@ -3,9 +3,95 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ARGOAGRO.Views.MainPage"
              Title="{Binding Title}">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout BackgroundColor="#69bf8d">
+                <Image Source="{Binding LogoImg}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Margin="0,40,0,40"/>
+            </StackLayout>
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+            <StackLayout Orientation="Vertical"
+                     HorizontalOptions="CenterAndExpand"
+                     Padding="40,40,40,0"
+                     BackgroundColor="#f9f9f9">
+
+                <Label Text="APA ITU ARGOAGRO?"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   TextColor="Black"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Start"
+                   Margin="0,0,0,10"/>
+
+                <Label Text="{Binding Description}"
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+                <Image Source="{Binding AnekaBuahImg}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    <!--
+    <ScrollView>
+        <RelativeLayout>
+            <StackLayout x:Name="banner"
+                         HorizontalOptions="CenterAndExpand"
+                         BackgroundColor="#69bf8d"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.4}">
+
+                <Image  Source="{Binding AnekaBuahImg}"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand" />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="CenterAndExpand"
+                         Padding="20,20,20,0"
+                         BackgroundColor="#f9f9f9"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.6}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToView,
+                            ElementName=banner,
+                            Property=Height,
+                            Factor=1}">
+
+                <Label Text="APA ITU ARGOAGRO?"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   TextColor="Black"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Start"
+                   Margin="0,0,0,10"/>
+
+                <Label Text="{Binding Description}"
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+                <Image Source="{Binding AnekaBuahImg}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="EndAndExpand" />
+            </StackLayout>
+        </RelativeLayout>
+    </ScrollView>-->
+    
 
 </ContentPage>

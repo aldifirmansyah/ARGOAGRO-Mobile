@@ -5,6 +5,58 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Img\aneka_buah.png" />
+    <None Remove="Img\bagus.png" />
+    <None Remove="Img\bca.png" />
+    <None Remove="Img\beras.png" />
+    <None Remove="Img\bni.jpg" />
+    <None Remove="Img\cari_produk_icon.png" />
+    <None Remove="Img\daftar_akun_header.jpg" />
+    <None Remove="Img\durian.png" />
+    <None Remove="Img\jne.png" />
+    <None Remove="Img\kakao.png" />
+    <None Remove="Img\kontak_kami_header.jpg" />
+    <None Remove="Img\koran_tempo.jpg" />
+    <None Remove="Img\logo-onehalf.png" />
+    <None Remove="Img\logo.png" />
+    <None Remove="Img\mandiri.jpg" />
+    <None Remove="Img\mastercard.png" />
+    <None Remove="Img\padi.png" />
+    <None Remove="Img\pertanyaan_header.jpg" />
+    <None Remove="Img\promo.jpg" />
+    <None Remove="Img\sindonews.png" />
+    <None Remove="Img\tas_belanja.png" />
+    <None Remove="Img\tiki.png" />
+    <None Remove="Img\visa.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Img\aneka_buah.png" />
+    <EmbeddedResource Include="Img\bagus.png" />
+    <EmbeddedResource Include="Img\bca.png" />
+    <EmbeddedResource Include="Img\beras.png" />
+    <EmbeddedResource Include="Img\bni.jpg" />
+    <EmbeddedResource Include="Img\cari_produk_icon.png" />
+    <EmbeddedResource Include="Img\daftar_akun_header.jpg" />
+    <EmbeddedResource Include="Img\durian.png" />
+    <EmbeddedResource Include="Img\jne.png" />
+    <EmbeddedResource Include="Img\kakao.png" />
+    <EmbeddedResource Include="Img\kontak_kami_header.jpg" />
+    <EmbeddedResource Include="Img\koran_tempo.jpg" />
+    <EmbeddedResource Include="Img\logo-onehalf.png" />
+    <EmbeddedResource Include="Img\logo.png" />
+    <EmbeddedResource Include="Img\mandiri.jpg" />
+    <EmbeddedResource Include="Img\mastercard.png" />
+    <EmbeddedResource Include="Img\padi.png" />
+    <EmbeddedResource Include="Img\pertanyaan_header.jpg" />
+    <EmbeddedResource Include="Img\promo.jpg" />
+    <EmbeddedResource Include="Img\sindonews.png" />
+    <EmbeddedResource Include="Img\tas_belanja.png" />
+    <EmbeddedResource Include="Img\tiki.png" />
+    <EmbeddedResource Include="Img\visa.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
     <PackageReference Include="Xamarin.Forms" Version="3.2.0.839982" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
