@@ -23,13 +23,14 @@ namespace ARGOAGRO
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/HomePage");
+            await NavigationService.NavigateAsync("MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
         }
     }
 }

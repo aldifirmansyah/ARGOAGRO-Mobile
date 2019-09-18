@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  xmlns:pages="clr-namespace:ARGOAGRO.Views"
+                  x:Class="ARGOAGRO.Views.MainPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <ListView x:Name="MenuItemsListView"
+                      SelectedItem="{Binding SelectedMasterItem, Mode=TwoWay}"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="true"
+                      ItemsSource="{Binding MasterItems}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+                                <Label VerticalOptions="FillAndExpand" 
+                                    VerticalTextAlignment="Center" 
+                                    Text="{Binding Title}" 
+                                    FontSize="Medium"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:HomePage/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
