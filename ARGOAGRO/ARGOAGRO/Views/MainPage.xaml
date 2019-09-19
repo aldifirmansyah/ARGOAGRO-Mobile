@@ -7,12 +7,14 @@
                   x:Class="ARGOAGRO.Views.MainPage">
 
     <MasterDetailPage.Master>
-        <ContentPage Title="Menu">
+        <ContentPage Title="Menu" BackgroundColor="#094C59" Opacity="0.8">
             <ListView x:Name="MenuItemsListView"
                       SelectedItem="{Binding SelectedMasterItem, Mode=TwoWay}"
                       SeparatorVisibility="None"
                       HasUnevenRows="true"
-                      ItemsSource="{Binding MasterItems}">
+                      ItemSelected="MasterItemsListView_ItemSelected"
+                      ItemsSource="{Binding MasterItems}"
+                      Margin="10, 50, 0, 0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -20,7 +22,9 @@
                                 <Label VerticalOptions="FillAndExpand" 
                                     VerticalTextAlignment="Center" 
                                     Text="{Binding Title}" 
-                                    FontSize="Medium"/>
+                                    FontSize="Medium"
+                                    TextColor="White"
+                                    Opacity="1"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

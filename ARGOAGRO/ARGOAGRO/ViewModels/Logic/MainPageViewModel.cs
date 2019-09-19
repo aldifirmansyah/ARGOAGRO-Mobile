@@ -14,8 +14,14 @@ namespace ARGOAGRO.ViewModels
     {
         private readonly IPageDialogService _pageDialogService;
         private readonly INavigationService _navigationService;
+        private MasterItemViewModel _selectedMasterItem;
 
         public ObservableCollection<MasterItemViewModel> MasterItems { get; set; }
+        public MasterItemViewModel SelectedMasterItem
+        {
+            get { return _selectedMasterItem; }
+            set { SetProperty(ref _selectedMasterItem, value); }
+        }
 
         public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService)
         {
@@ -29,8 +35,18 @@ namespace ARGOAGRO.ViewModels
                 new MasterItemViewModel { Title = "PENDAFTARAN AKUN" },
                 new MasterItemViewModel { Title = "PERTANYAAN" },
                 new MasterItemViewModel { Title = "KONTAK KAMI" },
-                new MasterItemViewModel { Title = "CARI LOKASI" }
+                new MasterItemViewModel { Title = "CARI PRODUK", PageName = "SearchProductPage" }
             });
         }
-	}
+
+        public DelegateCommand MenuItemClickedCommand => new DelegateCommand(() =>
+        {
+            if (SelectedMasterItem == null)
+                return;
+            
+            else _navigationService.NavigateAsync("NavigationPage/" + SelectedMasterItem.PageName);
+            SelectedMasterItem = null;
+        }
+        );
+    }
 }
