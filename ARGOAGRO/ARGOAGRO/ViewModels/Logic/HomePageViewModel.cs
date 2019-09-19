@@ -36,7 +36,6 @@ namespace ARGOAGRO.ViewModels
         public HomePageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Main Page";
         }
     }
 }
