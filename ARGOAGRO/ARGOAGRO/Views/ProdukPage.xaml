@@ -16,8 +16,12 @@
 
             <!-- TANAMAN PANGAN -->
             <Frame BackgroundColor="#ffffff"
-               CornerRadius="10"
-               Margin="20,10">
+                   CornerRadius="10"
+                   Margin="20,10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TanamanPanganCommand}" />
+                </Frame.GestureRecognizers>
+                
                 <StackLayout Orientation="Horizontal">
                     <Image Source="{Binding PadiImg}"
                            HorizontalOptions="Start"
