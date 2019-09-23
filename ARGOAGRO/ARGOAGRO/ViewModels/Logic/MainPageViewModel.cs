@@ -1,42 +1,52 @@
-﻿using Prism.Commands;
+﻿using ARGOAGRO.ViewModels.Presentation;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using Xamarin.Forms;
 
 namespace ARGOAGRO.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+	public class MainPageViewModel : ViewModelBase
     {
-        public string Description
+        private readonly IPageDialogService _pageDialogService;
+        private readonly INavigationService _navigationService;
+        private MasterItemViewModel _selectedMasterItem;
+
+        public ObservableCollection<MasterItemViewModel> MasterItems { get; set; }
+        public MasterItemViewModel SelectedMasterItem
         {
-            get {
-                return "ARGOAGRO merupakan aplikasi smart government berbasis WebGIS yang memiliki cara kerja seperti e-commerce " +
-                  "dengan fokus menjual produk-produk pertanian baik barang mentah maupun hasil olahan. " +
-                  "GIS digunakan sebagai Decision Support System bagi pelaku usaha karena dapat melakukan " +
-                  "mapping, routing, dan optimasi logistik berdasarkan peta yang dihasilkan. " +
-                  "Bagi pemerintah GIS dapat digunakan untuk memetakan wilayah-wilayah " +
-                  "yang potensional untuk memasarkan produk - produk pertanian di kabupaten Madiun dan sekitarnya.";
-            }
+            get { return _selectedMasterItem; }
+            set { SetProperty(ref _selectedMasterItem, value); }
         }
 
-        public ImageSource LogoImg
+        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService)
         {
-            get { return ImageSource.FromResource("ARGOAGRO.Img.logo-onehalf.png"); }
+            _pageDialogService = pageDialogService;
+            _navigationService = navigationService;
+
+            MasterItems = new ObservableCollection<MasterItemViewModel>(new[]
+            {
+                new MasterItemViewModel { Title = "HOME", PageName = "HomePage" },
+                new MasterItemViewModel { Title = "PRODUK" },
+                new MasterItemViewModel { Title = "PENDAFTARAN AKUN" },
+                new MasterItemViewModel { Title = "PERTANYAAN" },
+                new MasterItemViewModel { Title = "KONTAK KAMI" },
+                new MasterItemViewModel { Title = "CARI PRODUK", PageName = "SearchProductPage" }
+            });
         }
 
-        public ImageSource AnekaBuahImg
+        public DelegateCommand MenuItemClickedCommand => new DelegateCommand(() =>
         {
-            get { return ImageSource.FromResource("ARGOAGRO.Img.aneka_buah.png"); }
+            if (SelectedMasterItem == null)
+                return;
+            
+            else _navigationService.NavigateAsync("NavigationPage/" + SelectedMasterItem.PageName);
+            SelectedMasterItem = null;
         }
-
-        public MainPageViewModel(INavigationService navigationService)
-            : base(navigationService)
-        {
-            Title = "Main Page";
-        }
+        );
     }
 }
