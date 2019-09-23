@@ -28,6 +28,16 @@ namespace ARGOAGRO.ViewModels
             get { return ImageSource.FromResource("ARGOAGRO.Img.logo-onehalf.png"); }
         }
 
+        public ImageSource TasBelanjaImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.tas_belanja.png"); }
+        }
+
+        public ImageSource BagusImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.bagus.png"); }
+        }
+
         public ImageSource AnekaBuahImg
         {
             get { return ImageSource.FromResource("ARGOAGRO.Img.aneka_buah.png"); }
