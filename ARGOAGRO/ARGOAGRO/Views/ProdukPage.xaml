@@ -4,8 +4,9 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.ProdukPage">
-    <StackLayout BackgroundColor="#69bf8d">
-        <Label Text="PRODUK"
+    <ScrollView>
+        <StackLayout BackgroundColor="#69bf8d">
+            <Label Text="PRODUK"
                FontSize="48"
                FontAttributes="Bold"
                TextColor="#ffffff"
@@ -13,52 +14,93 @@
                VerticalOptions="Start"
                Margin="0,40,0,30" />
 
-        <!-- TANAMAN PANGAN -->
-        <Frame BackgroundColor="#ffffff"
+            <!-- TANAMAN PANGAN -->
+            <Frame BackgroundColor="#ffffff"
                CornerRadius="10"
                Margin="20,10">
-            <StackLayout Orientation="Horizontal">
-                <Image Source="{Binding PadiImg}"
-                       HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand"
-                       Margin="10,0"
-                       HeightRequest="80"
-                       WidthRequest="80"/>
-                <Label Text="TANAMAN PANGAN"
-                       FontAttributes="Bold"
-                       TextColor="#000000"
-                       FontSize="20"
-                       HorizontalOptions="EndAndExpand"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalTextAlignment="Start"
-                       Margin="10,0"/>
-            </StackLayout>
-        </Frame>
-        
-        <!-- TANAMAN HOLTIKULTURA -->
-        <Frame BackgroundColor="#ffffff"
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding PadiImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="TANAMAN PANGAN"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- TANAMAN HOLTIKULTURA -->
+            <Frame BackgroundColor="#ffffff"
                CornerRadius="10"
                Margin="20,10">
-            <StackLayout Orientation="Horizontal">
-                <Image Source="{Binding DurianImg}"
-                       HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand"
-                       Margin="10,0"
-                       HeightRequest="80"
-                       WidthRequest="80"/>
-                <Label Text="TANAMAN HOLTIKULTURA"
-                       FontAttributes="Bold"
-                       TextColor="#000000"
-                       FontSize="20"
-                       HorizontalOptions="EndAndExpand"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalTextAlignment="Start"
-                       Margin="10,0"/>
-            </StackLayout>
-        </Frame>
-        
-        <!-- PERKEBUNAN -->
-        
-        <!-- PROMO -->
-    </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding DurianImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="TANAMAN HOLTIKULTURA"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- PERKEBUNAN -->
+            <Frame BackgroundColor="#ffffff"
+               CornerRadius="10"
+               Margin="20,10">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding KakaoImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="PERKEBUNAN"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- PROMO -->
+            <Frame BackgroundColor="#ffffff"
+               CornerRadius="10"
+               Margin="20,10,20,60">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding PromoImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="PROMO"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

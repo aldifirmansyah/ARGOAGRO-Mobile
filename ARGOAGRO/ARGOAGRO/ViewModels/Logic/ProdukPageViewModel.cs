@@ -26,7 +26,7 @@ namespace ARGOAGRO.ViewModels
 
         public ImageSource PromoImg
         {
-            get { return ImageSource.FromResource("ARGOAGRO.Img.promo.png"); }
+            get { return ImageSource.FromResource("ARGOAGRO.Img.promo.jpg"); }
         }
 
         public ProdukPageViewModel()
