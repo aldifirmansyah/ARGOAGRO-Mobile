@@ -3,6 +3,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
@@ -11,9 +12,23 @@ namespace ARGOAGRO.ViewModels
 {
     public class HomePageViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+
+        public DelegateCommand BeliSekarangCommand => new DelegateCommand(() =>
+        {
+            _navigationService.NavigateAsync("ProdukPage");
+        });
+
+        public HomePageViewModel(INavigationService navigationService)
+            : base(navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
         public string Description
         {
-            get {
+            get
+            {
                 return "ARGOAGRO merupakan aplikasi smart government berbasis WebGIS yang memiliki cara kerja seperti e-commerce " +
                   "dengan fokus menjual produk-produk pertanian baik barang mentah maupun hasil olahan. " +
                   "GIS digunakan sebagai Decision Support System bagi pelaku usaha karena dapat melakukan " +
@@ -41,11 +56,6 @@ namespace ARGOAGRO.ViewModels
         public ImageSource AnekaBuahImg
         {
             get { return ImageSource.FromResource("ARGOAGRO.Img.aneka_buah.png"); }
-        }
-
-        public HomePageViewModel(INavigationService navigationService)
-            : base(navigationService)
-        {
         }
     }
 }

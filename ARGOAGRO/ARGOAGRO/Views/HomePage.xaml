@@ -19,6 +19,9 @@
                    BorderColor="#fefefe"
                    Margin="60,-40"
                    Padding="20">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BeliSekarangCommand}" />
+                </Frame.GestureRecognizers>
                 <Label Text="BELI SEKARANG"
                        FontSize="Large"
                        TextColor="Black"
