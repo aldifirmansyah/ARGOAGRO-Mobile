@@ -32,6 +32,8 @@ namespace ARGOAGRO
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchProductPage, SearchProductPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProdukPage, ProdukPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProdukDetailPage, ProdukDetailPageViewModel>();
         }
     }
 }

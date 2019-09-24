@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ARGOAGRO.Views.ProdukPage">
+    <ScrollView>
+        <StackLayout BackgroundColor="#69bf8d">
+            <Label Text="PRODUK"
+               FontSize="48"
+               FontAttributes="Bold"
+               TextColor="#ffffff"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"
+               Margin="0,40,0,30" />
+
+            <!-- TANAMAN PANGAN -->
+            <Frame BackgroundColor="#ffffff"
+                   CornerRadius="10"
+                   Margin="20,10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TanamanPanganCommand}" />
+                </Frame.GestureRecognizers>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding PadiImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="TANAMAN PANGAN"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- TANAMAN HOLTIKULTURA -->
+            <Frame BackgroundColor="#ffffff"
+               CornerRadius="10"
+               Margin="20,10">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding DurianImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="TANAMAN HOLTIKULTURA"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- PERKEBUNAN -->
+            <Frame BackgroundColor="#ffffff"
+               CornerRadius="10"
+               Margin="20,10">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding KakaoImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="PERKEBUNAN"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- PROMO -->
+            <Frame BackgroundColor="#ffffff"
+               CornerRadius="10"
+               Margin="20,10,20,60">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding PromoImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,0"
+                           HeightRequest="80"
+                           WidthRequest="80"/>
+                    <Label Text="PROMO"
+                           FontAttributes="Bold"
+                           TextColor="#000000"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Start"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

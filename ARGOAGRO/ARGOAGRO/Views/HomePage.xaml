@@ -10,12 +10,27 @@
                 <Image Source="{Binding LogoImg}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
-                       Margin="0,40,0,40"/>
+                       Margin="0,40,0,50"/>
             </StackLayout>
+
+            <Frame BackgroundColor="#ffffff"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   BorderColor="#fefefe"
+                   Margin="60,-40"
+                   Padding="20">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BeliSekarangCommand}" />
+                </Frame.GestureRecognizers>
+                <Label Text="BELI SEKARANG"
+                       FontSize="Large"
+                       TextColor="Black"
+                       HorizontalOptions="Center"/>
+            </Frame>
 
             <StackLayout Orientation="Vertical"
                      HorizontalOptions="CenterAndExpand"
-                     Padding="40,40,40,0"
+                     Padding="20,50,20,0"
                      BackgroundColor="#f9f9f9">
 
                 <Label Text="APA ITU ARGOAGRO?"
@@ -30,69 +45,33 @@
                    TextColor="Black"
                    FontSize="Small"/>
 
+                <StackLayout Orientation="Horizontal"
+                             Padding="10">
+                    <Image Source="{Binding TasBelanjaImg}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10,10,5,10"
+                           HeightRequest="70"
+                           WidthRequest="70"/>
+                    <Image Source="{Binding BagusImg}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="5,10,5,10"
+                           HeightRequest="60"
+                           WidthRequest="60"/>
+                    <Label Text="Aman, Terpercaya, Mudah, 100% Produk Asli, dan Unggulan"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"
+                           LineBreakMode="WordWrap"
+                           Margin="5,10,10,10" />
+                </StackLayout>
+                             
+
                 <Image Source="{Binding AnekaBuahImg}"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="EndAndExpand" />
             </StackLayout>
         </StackLayout>
     </ScrollView>
-    <!--
-    <ScrollView>
-        <RelativeLayout>
-            <StackLayout x:Name="banner"
-                         HorizontalOptions="CenterAndExpand"
-                         BackgroundColor="#69bf8d"
-                         RelativeLayout.WidthConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Width,
-                            Factor=1}"
-                         RelativeLayout.HeightConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Height,
-                            Factor=0.4}">
-
-                <Image  Source="{Binding AnekaBuahImg}"
-                        HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand" />
-
-            </StackLayout>
-
-            <StackLayout Orientation="Vertical"
-                         HorizontalOptions="CenterAndExpand"
-                         Padding="20,20,20,0"
-                         BackgroundColor="#f9f9f9"
-                         RelativeLayout.WidthConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Width,
-                            Factor=1}"
-                         RelativeLayout.HeightConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Height,
-                            Factor=0.6}"
-                         RelativeLayout.YConstraint="{ConstraintExpression
-                            Type=RelativeToView,
-                            ElementName=banner,
-                            Property=Height,
-                            Factor=1}">
-
-                <Label Text="APA ITU ARGOAGRO?"
-                   FontAttributes="Bold"
-                   FontSize="Medium"
-                   TextColor="Black"
-                   HorizontalOptions="StartAndExpand"
-                   VerticalOptions="Start"
-                   Margin="0,0,0,10"/>
-
-                <Label Text="{Binding Description}"
-                   TextColor="Black"
-                   FontSize="Small"/>
-
-                <Image Source="{Binding AnekaBuahImg}"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="EndAndExpand" />
-            </StackLayout>
-        </RelativeLayout>
-    </ScrollView>-->
-    
-
 </ContentPage>

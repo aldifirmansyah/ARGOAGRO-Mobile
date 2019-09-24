@@ -31,7 +31,7 @@ namespace ARGOAGRO.ViewModels
             MasterItems = new ObservableCollection<MasterItemViewModel>(new[]
             {
                 new MasterItemViewModel { Title = "HOME", PageName = "HomePage" },
-                new MasterItemViewModel { Title = "PRODUK" },
+                new MasterItemViewModel { Title = "PRODUK", PageName = "ProdukPage" },
                 new MasterItemViewModel { Title = "PENDAFTARAN AKUN" },
                 new MasterItemViewModel { Title = "PERTANYAAN" },
                 new MasterItemViewModel { Title = "KONTAK KAMI" },
