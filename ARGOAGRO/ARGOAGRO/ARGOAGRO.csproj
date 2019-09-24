@@ -20,6 +20,7 @@
     <None Remove="Img\logo-onehalf.png" />
     <None Remove="Img\logo.png" />
     <None Remove="Img\mandiri.jpg" />
+    <None Remove="Img\map.png" />
     <None Remove="Img\mastercard.png" />
     <None Remove="Img\padi.png" />
     <None Remove="Img\pertanyaan_header.jpg" />
@@ -46,6 +47,7 @@
     <EmbeddedResource Include="Img\logo-onehalf.png" />
     <EmbeddedResource Include="Img\logo.png" />
     <EmbeddedResource Include="Img\mandiri.jpg" />
+    <EmbeddedResource Include="Img\map.png" />
     <EmbeddedResource Include="Img\mastercard.png" />
     <EmbeddedResource Include="Img\padi.png" />
     <EmbeddedResource Include="Img\pertanyaan_header.jpg" />

@@ -4,6 +4,9 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.SearchProductPage">
-    <Label Text="This is SEARCH PRODUCT PAGE"/>
+    <StackLayout BackgroundColor="Blue" VerticalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="Red"></StackLayout>
+        <StackLayout VerticalOptions="End" HeightRequest="100" BackgroundColor="Yellow"></StackLayout>
+    </StackLayout>
 
 </ContentPage>
