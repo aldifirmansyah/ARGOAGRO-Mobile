@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<page:GradientContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:page="clr-namespace:ARGOAGRO;assembly=ARGOAGRO"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:local="clr-namespace:ARGOAGRO"
              xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.SearchProductPage"
-             BackgroundColor="#B8E68A">
+             StartColor="#B8E68A"
+             EndColor="#094C59">
     <RelativeLayout>
         <Frame BackgroundColor="#094C59"
                CornerRadius="10"
@@ -272,4 +274,4 @@
             </abstractions:RoundedBoxView.GestureRecognizers>
         </abstractions:RoundedBoxView>
     </RelativeLayout>
-</ContentPage>
+</page:GradientContentPage>
