@@ -2,11 +2,274 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ARGOAGRO"
+             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="ARGOAGRO.Views.SearchProductPage">
-    <StackLayout BackgroundColor="Blue" VerticalOptions="FillAndExpand">
-        <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="Red"></StackLayout>
-        <StackLayout VerticalOptions="End" HeightRequest="100" BackgroundColor="Yellow"></StackLayout>
-    </StackLayout>
+             x:Class="ARGOAGRO.Views.SearchProductPage"
+             BackgroundColor="#B8E68A">
+    <RelativeLayout>
+        <Frame BackgroundColor="#094C59"
+               CornerRadius="10"
+               WidthRequest="300"
+               HeightRequest="180"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                 Property=Height,
+                                                                 Factor=0.1}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                 Property=Width,
+                                                                 Factor=0.5,
+                                                                 Constant=-170}">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding StoreImg}" Aspect="AspectFill" WidthRequest="100"/>
+                    <Label Text="Cari Lokasi" FontSize="36" TextColor="White" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
+                <Frame BackgroundColor="White" CornerRadius="5" HeightRequest="40" Padding="10, 0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding SearchIcon}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SearchIconClickedCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <local:CustomEntry Placeholder="Search" WidthRequest="250" MaxLength="25" Unfocused="CustomEntry_Unfocused" ReturnCommand="{Binding SearchCommand}"
+                                           Text="{Binding SearchText, Mode=TwoWay}"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Frame>
+        <Image x:Name="MapImg" Source="{Binding MapImg}" Aspect="AspectFill"
+               RelativeLayout.YConstraint=
+               "{ConstraintExpression Type=RelativeToParent,
+                                      Property=Height,
+                                      Factor=1,
+                                      Constant=-400}"/>
+        
+        
+        <abstractions:RoundedBoxView IsVisible="{Binding BerasResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=100}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.3}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="beras"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding BerasResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=100}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.7}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="beras"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding BerasResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=200}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.4}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="beras"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding BerasResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=180}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.6}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="beras"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding BerasResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=260}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.8}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="beras"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding BerasResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=300}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.1}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="beras"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
 
+
+        <abstractions:RoundedBoxView IsVisible="{Binding KakaoResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=120}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.1}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="kakao"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding KakaoResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=130}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.9}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="kakao"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding KakaoResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=230}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.6}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="kakao"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding KakaoResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=330}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.25}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="kakao"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding DurianResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=60}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.87}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="durian"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding DurianResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=330}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.7}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="durian"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding DurianResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=150}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.4}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="durian"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+        <abstractions:RoundedBoxView IsVisible="{Binding DurianResultVisibility}"
+                BackgroundColor="Red" BorderColor="Red" CornerRadius="50" HeightRequest="15" WidthRequest="15"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView,
+                                        ElementName=MapImg,
+                                        Property=Y,
+                                        Factor=1,
+                                        Constant=220}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToParent,
+                                        Property=Width,
+                                        Factor=0.2}">
+            <abstractions:RoundedBoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="durian"/>
+            </abstractions:RoundedBoxView.GestureRecognizers>
+        </abstractions:RoundedBoxView>
+    </RelativeLayout>
 </ContentPage>

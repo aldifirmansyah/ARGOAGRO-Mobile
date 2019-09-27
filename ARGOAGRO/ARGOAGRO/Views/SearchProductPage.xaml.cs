@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using ARGOAGRO.ViewModels;
+using Xamarin.Forms;
 
 namespace ARGOAGRO.Views
 {
@@ -7,6 +8,11 @@ namespace ARGOAGRO.Views
         public SearchProductPage()
         {
             InitializeComponent();
+        }
+
+        private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+            (BindingContext as SearchProductPageViewModel).SubmitSearch();
         }
     }
 }

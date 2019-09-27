@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using RoundedBoxView.Forms.Plugin.Droid;
 
 namespace ARGOAGRO.Droid
 {
@@ -17,6 +18,7 @@ namespace ARGOAGRO.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            RoundedBoxViewRenderer.Init();
             LoadApplication(new App(new AndroidInitializer()));
         }
     }
