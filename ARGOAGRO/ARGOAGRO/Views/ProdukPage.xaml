@@ -19,7 +19,8 @@
                    CornerRadius="10"
                    Margin="20,10">
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding TanamanPanganCommand}" />
+                    <TapGestureRecognizer Command="{Binding ProductDetailCommand}"
+                                          CommandParameter="beras"/>
                 </Frame.GestureRecognizers>
                 
                 <StackLayout Orientation="Horizontal">
@@ -42,8 +43,14 @@
 
             <!-- TANAMAN HOLTIKULTURA -->
             <Frame BackgroundColor="#ffffff"
-               CornerRadius="10"
-               Margin="20,10">
+                   CornerRadius="10"
+                   Margin="20,10">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ProductDetailCommand}"
+                                          CommandParameter="durian"/>
+                </Frame.GestureRecognizers>
+                
                 <StackLayout Orientation="Horizontal">
                     <Image Source="{Binding DurianImg}"
                            HorizontalOptions="Start"
@@ -64,8 +71,14 @@
 
             <!-- PERKEBUNAN -->
             <Frame BackgroundColor="#ffffff"
-               CornerRadius="10"
-               Margin="20,10">
+                   CornerRadius="10"
+                   Margin="20,10">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ProductDetailCommand}"
+                                          CommandParameter="kakao"/>
+                </Frame.GestureRecognizers>
+                
                 <StackLayout Orientation="Horizontal">
                     <Image Source="{Binding KakaoImg}"
                            HorizontalOptions="Start"
@@ -86,8 +99,14 @@
 
             <!-- PROMO -->
             <Frame BackgroundColor="#ffffff"
-               CornerRadius="10"
-               Margin="20,10,20,60">
+                   CornerRadius="10"
+                   Margin="20,10,20,60">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ProductDetailCommand}"
+                                          CommandParameter="nanas"/>
+                </Frame.GestureRecognizers>
+                
                 <StackLayout Orientation="Horizontal">
                     <Image Source="{Binding PromoImg}"
                            HorizontalOptions="Start"

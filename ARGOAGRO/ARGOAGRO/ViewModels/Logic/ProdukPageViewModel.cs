@@ -12,7 +12,7 @@ namespace ARGOAGRO.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        public DelegateCommand TanamanPanganCommand => new DelegateCommand(() =>
+        public DelegateCommand ProductDetailCommand => new DelegateCommand(() =>
         {
             _navigationService.NavigateAsync("ProdukDetailPage");
         });
