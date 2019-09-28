@@ -62,7 +62,7 @@ namespace ARGOAGRO.Services
                 {
                     ID = 1,
                     TypeID = 1,
-                    ImageName = "beras.png",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.padi.png"),
                     ProductName = "Beras",
                     ProductBrand = "Brand Cap Bunga",
                     Description = "Beras Brand Cap Bunga merupakan beras yang tidak memakai bahan pemutih, tidak memakai bahan pengawet, " +
@@ -79,7 +79,7 @@ namespace ARGOAGRO.Services
                 {
                     ID = 2,
                     TypeID = 2,
-                    ImageName = "durian.png",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.durian.png"),
                     ProductName = "Durian",
                     ProductBrand = "Brand kembang kuning",
                     Description = "Brand Kembang Kuning menghasilkan durian yang didapat langsung dari petani berkualitas. " +
@@ -96,7 +96,7 @@ namespace ARGOAGRO.Services
                 {
                     ID = 3,
                     TypeID = 3,
-                    ImageName = "kakao.png",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.kakao.png"),
                     ProductName = "Kakao",
                     ProductBrand = "Brand Terang Bulan",
                     Description = "Berasal dari biji kakao polman, salah satu biji kakao terbaik di Indonesia. Dijamin memiliki " +
@@ -113,7 +113,7 @@ namespace ARGOAGRO.Services
                 {
                     ID = 4,
                     TypeID = 4,
-                    ImageName = "nanas.png",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.nanas.png"),
                     ProductName = "Nanas",
                     ProductBrand = "Brand Subang",
                     Description = "Nanas muda hutan dengan harga terjangkau.",

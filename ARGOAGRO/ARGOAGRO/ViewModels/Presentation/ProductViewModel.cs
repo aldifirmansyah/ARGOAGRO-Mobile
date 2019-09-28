@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace ARGOAGRO.ViewModels.Presentation
 {
@@ -8,7 +9,7 @@ namespace ARGOAGRO.ViewModels.Presentation
     {
         public int ID { get; set; }
         public int TypeID { get; set; }
-        public string ImageName { get; set; }
+        public ImageSource ImageName { get; set; }
         public string ProductName { get; set; }
         public string ProductBrand { get; set; }
         public string Description { get; set; }
