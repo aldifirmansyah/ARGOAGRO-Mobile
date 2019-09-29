@@ -11,6 +11,7 @@
     <None Remove="Img\beras-512.png" />
     <None Remove="Img\bni.jpg" />
     <None Remove="Img\cari_produk_icon.png" />
+    <None Remove="Img\circle-48.png" />
     <None Remove="Img\daftar_akun_header.jpg" />
     <None Remove="Img\durian-512.png" />
     <None Remove="Img\durian-80.png" />
@@ -45,6 +46,7 @@
     <EmbeddedResource Include="Img\beras-512.png" />
     <EmbeddedResource Include="Img\bni.jpg" />
     <EmbeddedResource Include="Img\cari_produk_icon.png" />
+    <EmbeddedResource Include="Img\circle-48.png" />
     <EmbeddedResource Include="Img\daftar_akun_header.jpg" />
     <EmbeddedResource Include="Img\durian-512.png" />
     <EmbeddedResource Include="Img\durian-80.png" />

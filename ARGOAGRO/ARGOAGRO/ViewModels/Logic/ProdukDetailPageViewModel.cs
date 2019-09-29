@@ -141,5 +141,9 @@ namespace ARGOAGRO.ViewModels
         {
             get { return ImageSource.FromResource("ARGOAGRO.Img.star-48-off.png"); }
         }
+        public ImageSource CircleImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.circle-48.png"); }
+        }
     }
 }
