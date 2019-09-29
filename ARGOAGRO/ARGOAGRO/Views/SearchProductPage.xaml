@@ -24,7 +24,7 @@
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="{Binding StoreImg}" Aspect="AspectFill" WidthRequest="100"/>
-                    <Label Text="Cari Lokasi" FontSize="36" TextColor="White" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="Cari Produk" FontSize="36" TextColor="White" VerticalOptions="Center" FontAttributes="Bold"/>
                 </StackLayout>
                 <Frame BackgroundColor="White" CornerRadius="5" HeightRequest="40" Padding="10, 0">
                     <StackLayout Orientation="Horizontal">
