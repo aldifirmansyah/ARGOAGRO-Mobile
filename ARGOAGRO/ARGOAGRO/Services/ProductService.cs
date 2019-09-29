@@ -62,7 +62,7 @@ namespace ARGOAGRO.Services
                 {
                     ID = 1,
                     TypeID = 1,
-                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.padi.png"),
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.beras.png"),
                     ProductName = "Beras",
                     ProductBrand = "Brand Cap Bunga",
                     Description = "Beras Brand Cap Bunga merupakan beras yang tidak memakai bahan pemutih, tidak memakai bahan pengawet, " +

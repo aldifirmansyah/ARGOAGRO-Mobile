@@ -10,23 +10,43 @@
                 <Image Source="{Binding Product.ImageName}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="Start"
-                       HeightRequest="350"
-                       Margin="0,10,0,50"/>
+                       HeightRequest="250"
+                       Margin="0,5,0,40"
+                       BackgroundColor="Aqua"/>
                 <StackLayout>
                     <Label Text="{Binding Product.ProductName}"
-                           FontSize="48"
+                           FontSize="52"
                            FontAttributes="Bold"
                            TextColor="#ffffff"
                            HorizontalOptions="CenterAndExpand"
-                           VerticalOptions="Start"
-                           Margin="0,5" />
+                           VerticalOptions="Start"/>
                     <Label Text="{Binding Product.ProductBrand}"
                            FontSize="24"
-                           FontAttributes="Bold"
                            TextColor="#ffffff"
+                           FontAttributes="Bold"
                            HorizontalOptions="CenterAndExpand"
-                           VerticalOptions="Start"
-                           Margin="0,5" />
+                           VerticalOptions="Start"/>
+
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="CenterAndExpand"
+                                 Margin="0,10,0,40">
+                        <Label Text="{Binding Product.TotalReview}"
+                               FontSize="24"
+                               TextColor="#B8E68A"
+                               FontAttributes="Bold"/>
+                        <Label Text=" Penilai | "
+                               FontSize="24"
+                               TextColor="#ffffff"
+                               FontAttributes="Bold"/>
+                        <Label Text="{Binding Product.TotalSold}"
+                               FontSize="24"
+                               TextColor="#B8E68A"
+                               FontAttributes="Bold"/>
+                        <Label Text=" Terjual"
+                               FontSize="24"
+                               TextColor="#ffffff"
+                               FontAttributes="Bold"/>
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
