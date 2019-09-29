@@ -62,8 +62,8 @@ namespace ARGOAGRO.Services
                 {
                     ID = 1,
                     TypeID = 1,
-                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.beras.png"),
-                    ProductName = "Beras",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.beras-512.png"),
+                    ProductName = "BERAS",
                     ProductBrand = "Brand Cap Bunga",
                     Description = "Beras Brand Cap Bunga merupakan beras yang tidak memakai bahan pemutih, tidak memakai bahan pengawet, " +
                     "dan tidak memakai bahan pewangi. Beras ini cocok untuk kalangan menengah dengan harga ekonomis.",
@@ -79,8 +79,8 @@ namespace ARGOAGRO.Services
                 {
                     ID = 2,
                     TypeID = 2,
-                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.durian.png"),
-                    ProductName = "Durian",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.durian-512.png"),
+                    ProductName = "DURIAN",
                     ProductBrand = "Brand kembang kuning",
                     Description = "Brand Kembang Kuning menghasilkan durian yang didapat langsung dari petani berkualitas. " +
                     "Dijamin manis dengan harga yang terjangkau.",
@@ -96,8 +96,8 @@ namespace ARGOAGRO.Services
                 {
                     ID = 3,
                     TypeID = 3,
-                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.kakao.png"),
-                    ProductName = "Kakao",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.kakao-512.png"),
+                    ProductName = "KAKAO",
                     ProductBrand = "Brand Terang Bulan",
                     Description = "Berasal dari biji kakao polman, salah satu biji kakao terbaik di Indonesia. Dijamin memiliki " +
                     "rasa yang nikmat jika diolah menjadi coklat.",
@@ -113,8 +113,8 @@ namespace ARGOAGRO.Services
                 {
                     ID = 4,
                     TypeID = 4,
-                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.nanas.png"),
-                    ProductName = "Nanas",
+                    ImageName = ImageSource.FromResource("ARGOAGRO.Img.nanas-512.png"),
+                    ProductName = "NANAS",
                     ProductBrand = "Brand Subang",
                     Description = "Nanas muda hutan dengan harga terjangkau.",
                     Rating = 3,

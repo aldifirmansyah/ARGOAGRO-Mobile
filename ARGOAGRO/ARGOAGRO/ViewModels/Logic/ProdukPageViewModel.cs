@@ -125,22 +125,22 @@ namespace ARGOAGRO.ViewModels
 
         public ImageSource PadiImg
         {
-            get { return ImageSource.FromResource("ARGOAGRO.Img.padi.png"); }
+            get { return ImageSource.FromResource("ARGOAGRO.Img.padi-80.png"); }
         }
 
         public ImageSource DurianImg
         {
-            get { return ImageSource.FromResource("ARGOAGRO.Img.durian.png"); }
+            get { return ImageSource.FromResource("ARGOAGRO.Img.durian-80.png"); }
         }
 
         public ImageSource KakaoImg
         {
-            get { return ImageSource.FromResource("ARGOAGRO.Img.kakao.png"); }
+            get { return ImageSource.FromResource("ARGOAGRO.Img.kakao-80.png"); }
         }
 
         public ImageSource PromoImg
         {
-            get { return ImageSource.FromResource("ARGOAGRO.Img.promo.jpg"); }
+            get { return ImageSource.FromResource("ARGOAGRO.Img.promo-80.png"); }
         }
     }
 }
