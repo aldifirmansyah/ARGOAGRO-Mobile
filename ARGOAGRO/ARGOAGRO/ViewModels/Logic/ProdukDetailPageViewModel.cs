@@ -5,6 +5,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -22,19 +23,80 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _product, value); }
         }
 
-        // Boolean for set the correspondence stars on
-        public bool IsFirstOn { get; set; } = false;
-        public bool IsSecondOn { get; set; } = false;
-        public bool IsThirdOn { get; set; } = false;
-        public bool IsFourthOn { get; set; } = false;
-        public bool IsFifthOn { get; set; } = false;
+        private bool _isFirstOn;
+        public bool IsFirstOn
+        {
+            get { return _isFirstOn; }
+            set { SetProperty(ref _isFirstOn, value); }
+        }
+
+        private bool _isSecondOn;
+        public bool IsSecondOn
+        {
+            get { return _isSecondOn; }
+            set { SetProperty(ref _isSecondOn, value); }
+        }
+
+        private bool _isThirdOn;
+        public bool IsThirdOn
+        {
+            get { return _isThirdOn; }
+            set { SetProperty(ref _isThirdOn, value); }
+        }
+
+        private bool _isFourthOn;
+        public bool IsFourthOn
+        {
+            get { return _isFourthOn; }
+            set { SetProperty(ref _isFourthOn, value); }
+        }
+
+
+        private bool _isFifthOn;
+        public bool IsFifthOn
+        {
+            get { return _isFifthOn; }
+            set { SetProperty(ref _isFifthOn, value); }
+        }
+
 
         // Boolean for set the correspondence stars off
-        public bool IsFirstOff { get; set; } = false;
-        public bool IsSecondOff { get; set; } = false;
-        public bool IsThirdOff { get; set; } = false;
-        public bool IsFourthOff { get; set; } = false;
-        public bool IsFifthOff { get; set; } = false;
+        private bool _isFirstOff;
+        public bool IsFirstOff
+        {
+            get { return _isFirstOff; }
+            set { SetProperty(ref _isFirstOff, value); }
+        }
+
+        private bool _isSecondOff;
+        public bool IsSecondOff
+        {
+            get { return _isSecondOff; }
+            set { SetProperty(ref _isSecondOff, value); }
+        }
+
+        private bool _isThirdOff;
+        public bool IsThirdOff
+        {
+            get { return _isThirdOff; }
+            set { SetProperty(ref _isThirdOff, value); }
+        }
+
+        private bool _isFourthOff;
+        public bool IsFourthOff
+        {
+            get { return _isFourthOff; }
+            set { SetProperty(ref _isFourthOff, value); }
+        }
+
+        private bool _isFifthOff;
+        public bool IsFifthOff
+        {
+            get { return _isFifthOff; }
+            set { SetProperty(ref _isFifthOff, value); }
+        }
+
+
 
         public ProdukDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
@@ -47,6 +109,7 @@ namespace ARGOAGRO.ViewModels
 
             Product = param.GetValue<ProductViewModel>("productType");
             setStarsOn();
+            
         }
 
         /// <summary>
@@ -54,20 +117,17 @@ namespace ARGOAGRO.ViewModels
         /// </summary>
         private void setStarsOn()
         {
-            if (Product.Rating >= 1) IsFirstOn = true;
-            else { IsFirstOff = true; return; }
+            Debug.WriteLine("hahaha rating: " + Product.Rating);
 
-            if (Product.Rating >= 2) IsSecondOn = true;
-            else { IsSecondOff = true; return; }
+            if (Product.Rating >= 1) IsFirstOn = true; else IsFirstOff = true;
 
-            if (Product.Rating >= 3) IsThirdOn = true;
-            else { IsThirdOff = true; return; }
+            if (Product.Rating >= 2) IsSecondOn = true; else IsSecondOff = true;
 
-            if (Product.Rating >= 4) IsFourthOn = true;
-            else { IsFourthOff = true; return; }
+            if (Product.Rating >= 3) IsThirdOn = true; else IsThirdOff = true;
 
-            if (Product.Rating >= 5) IsFifthOn = true;
-            else { IsFifthOff = true; return; }
+            if (Product.Rating >= 4) IsFourthOn = true; else IsFourthOff = true; 
+
+            if (Product.Rating >= 5) IsFifthOn = true; else IsFifthOff = true;
         }
         
 

@@ -31,6 +31,8 @@
     <None Remove="Img\promo-80.png" />
     <None Remove="Img\search_icon.png" />
     <None Remove="Img\sindonews.png" />
+    <None Remove="Img\star-48-off.png" />
+    <None Remove="Img\star-48-on.png" />
     <None Remove="Img\tas_belanja.png" />
     <None Remove="Img\tiki.png" />
     <None Remove="Img\visa.png" />
@@ -63,6 +65,8 @@
     <EmbeddedResource Include="Img\promo-80.png" />
     <EmbeddedResource Include="Img\search_icon.png" />
     <EmbeddedResource Include="Img\sindonews.png" />
+    <EmbeddedResource Include="Img\star-48-off.png" />
+    <EmbeddedResource Include="Img\star-48-on.png" />
     <EmbeddedResource Include="Img\tas_belanja.png" />
     <EmbeddedResource Include="Img\tiki.png" />
     <EmbeddedResource Include="Img\visa.png" />
