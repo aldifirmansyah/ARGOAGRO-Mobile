@@ -14,16 +14,19 @@ namespace ARGOAGRO.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        public DelegateCommand BeliSekarangCommand => new DelegateCommand(() =>
-        {
-            _navigationService.NavigateAsync("ProdukPage");
-        });
+        
 
         public HomePageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             _navigationService = navigationService;
         }
+
+        public DelegateCommand BeliSekarangCommand => new DelegateCommand(() =>
+        {
+            Debug.WriteLine("BELI SEKARANG IS TAPPED!");
+            _navigationService.NavigateAsync("ProdukPage");
+        });
 
         public string Description
         {
