@@ -22,11 +22,19 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _product, value); }
         }
 
+        // Boolean for set the correspondence stars on
         public bool IsFirstOn { get; set; } = false;
         public bool IsSecondOn { get; set; } = false;
         public bool IsThirdOn { get; set; } = false;
         public bool IsFourthOn { get; set; } = false;
         public bool IsFifthOn { get; set; } = false;
+
+        // Boolean for set the correspondence stars off
+        public bool IsFirstOff { get; set; } = false;
+        public bool IsSecondOff { get; set; } = false;
+        public bool IsThirdOff { get; set; } = false;
+        public bool IsFourthOff { get; set; } = false;
+        public bool IsFifthOff { get; set; } = false;
 
         public ProdukDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
@@ -46,11 +54,20 @@ namespace ARGOAGRO.ViewModels
         /// </summary>
         private void setStarsOn()
         {
-            if (Product.Rating >= 1) IsFirstOn = true; else return;
-            if (Product.Rating >= 2) IsSecondOn = true; else return;
-            if (Product.Rating >= 3) IsThirdOn = true; else return;
-            if (Product.Rating >= 4) IsFourthOn = true; else return;
-            if (Product.Rating >= 5) IsFifthOn = true; else return;
+            if (Product.Rating >= 1) IsFirstOn = true;
+            else { IsFirstOff = true; return; }
+
+            if (Product.Rating >= 2) IsSecondOn = true;
+            else { IsSecondOff = true; return; }
+
+            if (Product.Rating >= 3) IsThirdOn = true;
+            else { IsThirdOff = true; return; }
+
+            if (Product.Rating >= 4) IsFourthOn = true;
+            else { IsFourthOff = true; return; }
+
+            if (Product.Rating >= 5) IsFifthOn = true;
+            else { IsFifthOff = true; return; }
         }
         
 
