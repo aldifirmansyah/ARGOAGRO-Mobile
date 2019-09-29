@@ -7,7 +7,7 @@
              x:Class="ARGOAGRO.Views.HomePage">
     <ScrollView>
         <StackLayout>
-            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#69bf8d">
+            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59">
                 <Image Source="{Binding LogoImg}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"

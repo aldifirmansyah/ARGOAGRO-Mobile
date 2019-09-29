@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ARGOAGRO"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.ProdukPage">
     <ScrollView>
-        <StackLayout BackgroundColor="#69bf8d">
+        <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59">
             <Label Text="PRODUK"
                FontSize="48"
                FontAttributes="Bold"
@@ -127,6 +128,6 @@
                            Margin="10,0"/>
                 </StackLayout>
             </Frame>
-        </StackLayout>
+        </local:GradientStackLayout>
     </ScrollView>
 </ContentPage>
