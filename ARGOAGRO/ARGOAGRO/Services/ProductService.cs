@@ -13,7 +13,7 @@ namespace ARGOAGRO.Services
 {
     public class ProductService
     {
-        private SQLiteAsyncConnection _localDbConnection = DependencyService.Get<ISQLiteDb>().GetConnection();
+        //private SQLiteAsyncConnection _localDbConnection = DependencyService.Get<ISQLiteDb>().GetConnection();
 
         /// <summary>
         /// Get all product type
@@ -129,7 +129,7 @@ namespace ARGOAGRO.Services
             };
             return result;
         }
-
+        /*
         /// <summary>
         /// Get All Product Review regarding a product using its ID
         /// </summary>
@@ -207,5 +207,6 @@ namespace ARGOAGRO.Services
             };
             await _localDbConnection.InsertAsync(productReviewModel);
         }
+        */
     }
 }

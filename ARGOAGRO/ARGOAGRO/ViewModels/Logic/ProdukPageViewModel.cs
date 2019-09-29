@@ -15,7 +15,7 @@ namespace ARGOAGRO.ViewModels
     {
         private readonly INavigationService _navigationService;
         
-        //private ProductService _productService = new ProductService();
+        private ProductService _productService = new ProductService();
         
         private IEnumerable<ProductViewModel> _allProducts;
 
