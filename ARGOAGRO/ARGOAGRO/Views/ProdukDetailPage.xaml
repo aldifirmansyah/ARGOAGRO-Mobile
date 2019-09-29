@@ -2,17 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ARGOAGRO"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.ProdukDetailPage">
     <ScrollView>
         <StackLayout>
-            <StackLayout BackgroundColor="#69bf8d">
+            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#69bf8d">
                 <Image Source="{Binding Product.ImageName}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="Start"
                        HeightRequest="250"
-                       Margin="0,5,0,40"
-                       BackgroundColor="Aqua"/>
+                       Margin="0,5,0,40"/>
                 <StackLayout>
                     <Label Text="{Binding Product.ProductName}"
                            FontSize="52"
@@ -48,7 +48,7 @@
                                FontAttributes="Bold"/>
                     </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            </local:GradientStackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>
