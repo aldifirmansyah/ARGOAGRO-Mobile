@@ -45,8 +45,8 @@ namespace ARGOAGRO.ViewModels
         {
             _navigationService = navigationService;
 
-            //AllProducts = _productService.GetAllProduct();
-            
+            AllProducts = _productService.GetAllProduct();
+            /*
             AllProducts = new List<ProductViewModel>()
             {
                 new ProductViewModel()
@@ -118,6 +118,7 @@ namespace ARGOAGRO.ViewModels
                     Discount = 20
                 }
             };
+            */
         }
 
 
