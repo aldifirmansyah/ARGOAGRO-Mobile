@@ -25,7 +25,7 @@ namespace ARGOAGRO.ViewModels
         public DelegateCommand BeliSekarangCommand => new DelegateCommand(() =>
         {
             Debug.WriteLine("BELI SEKARANG IS TAPPED!");
-            _navigationService.NavigateAsync("ProdukPage");
+            _navigationService.NavigateAsync("/MainPage/NavigationPage/ProdukPage");
         });
 
         public string Description
