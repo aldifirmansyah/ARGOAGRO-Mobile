@@ -161,8 +161,9 @@
                 <Button Text="BELI SEKARANG"
                         Command="{Binding BeliSekarangCommand}"
                         TextColor="#000000"
+                        FontSize="14"
                         FontAttributes="Bold"
-                        BackgroundColor="Orange"
+                        BackgroundColor="#f9ca24"
                         BorderRadius="10"
                         Padding="0"/>
 
