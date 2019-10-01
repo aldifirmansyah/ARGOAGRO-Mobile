@@ -67,7 +67,58 @@
                                    HeightRequest="24"/>
                 </StackLayout>
                 <!-- End of row for Rating/Stars -->
-                
+
+                <Label Grid.Row="1"
+                       Text="{Binding Product.ProductName}"
+                       FontSize="54"
+                       FontAttributes="Bold"
+                       TextColor="#ffffff"/>
+
+                <Label Grid.Row="2"
+                       Text="{Binding Product.ProductBrand}"
+                       FontSize="24"
+                       TextColor="#ffffff"/>
+
+                <StackLayout Grid.Row="3"
+                             Orientation="Horizontal"
+                             Margin="0, 20">
+                    <Label Text="{Binding Product.TotalReview}"
+                           FontSize="12"
+                           TextColor="#B8E68A"/>
+                    <Label Text="Penilai |"
+                           FontSize="12"
+                           TextColor="#ffffff"/>
+                    <Label Text="{Binding Product.TotalSold}"
+                           FontSize="12"
+                           TextColor="#B8E68A"/>
+                    <Label Text="Terjual | Bergabung "
+                           FontSize="12"
+                           TextColor="#ffffff"/>
+                    <Label Text="22 Bulan Yang Lalu"
+                           FontSize="12"
+                           TextColor="#B8E68A"/>
+                </StackLayout>
+
+                <Label Grid.Row="4"
+                       Text="{Binding Product.Description}"
+                       TextColor="#ffffff"
+                       FontSize="12" />
+
+                <StackLayout Grid.Row="5"
+                             Orientation="Horizontal">
+                    <Label Text="Kode Produk :"
+                           TextColor="#ffffff"
+                           FontSize="16"/>
+                    <Label Text="{Binding Product.ProductCode}"
+                           TextColor="#ffffff"
+                           FontSize="16" />
+                </StackLayout>
+
+                <Label Grid.Row="6"
+                       Text="{Binding Product.Terms}"
+                       TextColor="#ffffff"
+                       FontSize="16" />
+
             </local:GradientStackLayout>
         </StackLayout>
     </ScrollView>
