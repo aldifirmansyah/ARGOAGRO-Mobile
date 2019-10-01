@@ -9,9 +9,8 @@
     <ScrollView>
         <StackLayout>
             <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" Padding="15,20">
-                <Grid>
+                <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -105,7 +104,80 @@
                         </StackLayout>
                     </StackLayout>
 
+                    <Label Grid.Row="5"
+                           Grid.ColumnSpan="2"
+                           Text="Nama Lengkap"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           HorizontalOptions="StartAndExpand"
+                           Margin="0,10,0,0"/>
+                    <Frame Grid.Row="6" Grid.ColumnSpan="2" 
+                           BackgroundColor="White" 
+                           CornerRadius="5" 
+                           HeightRequest="40" 
+                           Padding="10, 0"
+                           Margin="0,5">
+                        <local:CustomEntry Placeholder="Type here" MaxLength="40" FontSize="14"/>
+                    </Frame>
+
+                    <Label Grid.Row="7"
+                           Grid.ColumnSpan="2"
+                           Text="Email"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           HorizontalOptions="StartAndExpand" />
+                    <Frame Grid.Row="8" Grid.ColumnSpan="2" 
+                           BackgroundColor="White" 
+                           CornerRadius="5" 
+                           HeightRequest="40" 
+                           Padding="10, 0"
+                           Margin="0,5">
+                        <local:CustomEntry Placeholder="Type here" MaxLength="40" FontSize="14"/>
+                    </Frame>
+
+                    <Label Grid.Row="9"
+                           Grid.ColumnSpan="2"
+                           Text="Asal Daerah"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           HorizontalOptions="StartAndExpand" />
+                    <Frame Grid.Row="10" Grid.ColumnSpan="2" 
+                           BackgroundColor="White" 
+                           CornerRadius="5" 
+                           HeightRequest="40" 
+                           Padding="10, 0"
+                           Margin="0,5">
+                        <local:CustomEntry Placeholder="Type here" MaxLength="40" FontSize="14"/>
+                    </Frame>
+
+                    <Label Grid.Row="11"
+                           Grid.ColumnSpan="2"
+                           Text="Penilaian"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           HorizontalOptions="StartAndExpand" />
+                    <Frame Grid.Row="12" Grid.ColumnSpan="2" 
+                           BackgroundColor="White" 
+                           CornerRadius="5" 
+                           HeightRequest="120" 
+                           Padding="10, 0"
+                           Margin="0,5">
+                        <local:CustomEntry Placeholder="Type here" FontSize="14"/>
+                    </Frame>
                 </Grid>
+
+                <Frame BackgroundColor="#B8E68A"
+                       HorizontalOptions="End"
+                       CornerRadius="5"
+                       Padding="20,10"
+                       HasShadow="True">
+                    <Label Text="KIRIM"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           FontAttributes="Bold"/>
+                </Frame>
+                
+
             </local:GradientStackLayout>
         </StackLayout>
     </ScrollView>
