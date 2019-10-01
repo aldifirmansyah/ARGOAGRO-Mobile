@@ -4,17 +4,17 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:local="clr-namespace:ARGOAGRO"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="ARGOAGRO.Views.ProdukDetailPage">
+             x:Class="ARGOAGRO.Views.ProdukDetail2Page">
     <ScrollView>
         <StackLayout>
-            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59">
+            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" Padding="20">
                 <Image Source="{Binding Product.ImageName}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="Start"
                        HeightRequest="200"
                        Margin="0,5,0,40"/>
 
-                <Grid RowSpacing="0" Padding="20,0,20,20">
+                <Grid RowSpacing="0" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -114,12 +114,59 @@
                            FontSize="16" />
                 </StackLayout>
 
-                <Label Grid.Row="6"
-                       Text="{Binding Product.Terms}"
+                <StackLayout Grid.Row="6"
+                             Orientation="Horizontal">
+                    <Label Text="Ketentuan     :"
                        TextColor="#ffffff"
                        FontSize="16" />
-
+                    <Label Text="{Binding Product.Terms}"
+                       TextColor="#ffffff"
+                       FontSize="16" />
+                </StackLayout>
+                
             </local:GradientStackLayout>
+
+            <StackLayout VerticalOptions="EndAndExpand"
+                         BackgroundColor="#ffffff"
+                         Padding="20,10,20,20">
+                
+                <Label HorizontalOptions="CenterAndExpand"
+                       Text="Lihat Review"
+                       TextColor="#95a5a6"
+                       FontSize="18"
+                       FontAttributes="Bold">
+                    <!--
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenReviewCommand}" />
+                    </Label.GestureRecognizers>-->
+                </Label>
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="0,10">
+                    <Label Text="Rp."
+                           FontSize="36"
+                           TextColor="#000000"/>
+                    <Label Text="{Binding Product.UnitPrice}"
+                           FontSize="36"
+                           TextColor="#000000"/>
+                    <Label Text="/"
+                           FontSize="36"
+                           TextColor="#000000"/>
+                    <Label Text="{Binding Product.UnitType}"
+                           FontSize="36"
+                           TextColor="#000000"/>
+                </StackLayout>
+
+                <Button Text="BELI SEKARANG"
+                        TextColor="#000000"
+                        FontAttributes="Bold"
+                        BackgroundColor="Orange"
+                        BorderRadius="10"
+                        Padding="0"/>
+
+            </StackLayout>
+            
         </StackLayout>
     </ScrollView>
   
