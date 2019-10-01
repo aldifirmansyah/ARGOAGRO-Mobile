@@ -9,6 +9,17 @@
     <ScrollView>
         <StackLayout>
             <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" Padding="15,20">
+                <Frame BackgroundColor="#2E7D32"
+                       CornerRadius="10"
+                       BorderColor="#2E7D32"
+                       Padding="15,10"
+                       HorizontalOptions="Start"
+                       Margin="0,10,0,0">
+                    <Label Text="PREORDER"
+                           FontSize="14"
+                           TextColor="#fefefe" />
+                </Frame>
+                
                 <Grid RowSpacing="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.5*" />
