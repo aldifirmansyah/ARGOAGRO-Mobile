@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ARGOAGRO"
+             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ARGOAGRO.Views.ProductReviewPage">
+    <ScrollView>
+        <StackLayout>
+            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" Padding="15,20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                           Grid.ColumnSpan="2" 
+                           Text="Penilaian Produk"
+                           TextColor="#ffffff"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           Margin="0,10"/>
+
+                    <Image Grid.Row="1"
+                           Grid.Column="1"
+                           Grid.RowSpan="4"
+                           Source="{Binding Product.ImageName}"
+                           HeightRequest="120"/>
+
+                    <!-- Product Detail -->
+                    <Label Grid.Row="2"
+                           Grid.Column="1"
+                           Text="{Binding Product.ProductName}"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           TextColor="#ffffff"/>
+
+                    <Label Grid.Row="3"
+                           Grid.Column="1"
+                           Text="{Binding Product.ProductBrand}"
+                           FontSize="14"
+                           TextColor="#ffffff"/>
+
+                    <Label Grid.Row="4"
+                           Grid.Column="1"
+                           Text="Beri Penilaian"
+                           FontSize="14"
+                           TextColor="#ffffff"/>
+
+                </Grid>
+            </local:GradientStackLayout>
+        </StackLayout>
+    </ScrollView>
+  
+</ContentPage>
