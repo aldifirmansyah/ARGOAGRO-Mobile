@@ -159,6 +159,7 @@
                 </StackLayout>
 
                 <Button Text="BELI SEKARANG"
+                        Command="{Binding BeliSekarangCommand}"
                         TextColor="#000000"
                         FontAttributes="Bold"
                         BackgroundColor="Orange"
