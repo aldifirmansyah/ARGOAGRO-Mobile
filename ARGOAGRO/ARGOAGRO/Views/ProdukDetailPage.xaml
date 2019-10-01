@@ -102,7 +102,7 @@
                 </Grid>
             </local:GradientStackLayout>
 
-            <StackLayout VerticalOptions="EndAndExpand">
+            <StackLayout VerticalOptions="EndAndExpand" BackgroundColor="#ffffff">
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="CenterAndExpand"
                              Margin="0,20">
@@ -132,7 +132,7 @@
 
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="CenterAndExpand"
-                             Margin="0,10">
+                             Margin="0,10,0,20">
                     <Image HorizontalOptions="CenterAndExpand"
                            Source="{Binding CircleImg}"
                            HeightRequest="12"
