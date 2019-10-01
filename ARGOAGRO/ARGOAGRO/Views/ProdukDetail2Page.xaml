@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ARGOAGRO"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ARGOAGRO.Views.ProdukDetailPage">
+    <ScrollView>
+        <StackLayout>
+            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59">
+                <Image Source="{Binding Product.ImageName}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Start"
+                       HeightRequest="200"
+                       Margin="0,5,0,40"/>
+
+                <Grid RowSpacing="0" Padding="20,0,20,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                
+            </local:GradientStackLayout>
+        </StackLayout>
+    </ScrollView>
+  
+</ContentPage>
