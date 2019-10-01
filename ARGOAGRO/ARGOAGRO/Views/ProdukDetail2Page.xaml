@@ -129,16 +129,15 @@
             <StackLayout VerticalOptions="EndAndExpand"
                          BackgroundColor="#ffffff"
                          Padding="20,10,20,20">
-                
+
                 <Label HorizontalOptions="CenterAndExpand"
                        Text="Lihat Review"
                        TextColor="#95a5a6"
                        FontSize="18"
                        FontAttributes="Bold">
-                    <!--
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenReviewCommand}" />
-                    </Label.GestureRecognizers>-->
+                    </Label.GestureRecognizers>
                 </Label>
 
                 <StackLayout Orientation="Horizontal"

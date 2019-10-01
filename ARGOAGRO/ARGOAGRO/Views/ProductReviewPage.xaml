@@ -37,33 +37,73 @@
                            TextColor="#ffffff"
                            FontAttributes="Bold"
                            FontSize="24"
-                           Margin="0,10"/>
+                           Margin="0,10,0,0"/>
 
                     <Image Grid.Row="1"
-                           Grid.Column="1"
+                           Grid.Column="0" 
                            Grid.RowSpan="4"
                            Source="{Binding Product.ImageName}"
                            HeightRequest="120"/>
 
                     <!-- Product Detail -->
-                    <Label Grid.Row="2"
+                    <Label Grid.Row="1"
                            Grid.Column="1"
                            Text="{Binding Product.ProductName}"
                            FontSize="36"
                            FontAttributes="Bold"
                            TextColor="#ffffff"/>
 
-                    <Label Grid.Row="3"
+                    <Label Grid.Row="2"
                            Grid.Column="1"
                            Text="{Binding Product.ProductBrand}"
                            FontSize="14"
                            TextColor="#ffffff"/>
 
-                    <Label Grid.Row="4"
+                    <Label Grid.Row="3"
                            Grid.Column="1"
                            Text="Beri Penilaian"
                            FontSize="14"
                            TextColor="#ffffff"/>
+
+                    <StackLayout Grid.Row="4" Grid.Column="1" Margin="0,5,0,10">
+                        <StackLayout Orientation="Horizontal">
+                            
+                            <Image Source="{Binding StarOnImg}" 
+                                   IsVisible="{Binding IsFirstOn}"
+                                   HeightRequest="24"/>
+                            <Image Source="{Binding StarOffImg}" 
+                                   IsVisible="{Binding IsFirstOff}"
+                                   HeightRequest="24"/>
+
+                            <Image Source="{Binding StarOnImg}" 
+                                   IsVisible="{Binding IsSecondOn}"
+                                   HeightRequest="24"/>
+                            <Image Source="{Binding StarOffImg}" 
+                                   IsVisible="{Binding IsSecondOff}"
+                                   HeightRequest="24"/>
+
+                            <Image Source="{Binding StarOnImg}" 
+                                   IsVisible="{Binding IsThirdOn}"
+                                   HeightRequest="24"/>
+                            <Image Source="{Binding StarOffImg}" 
+                                   IsVisible="{Binding IsThirdOff}"
+                                   HeightRequest="24"/>
+
+                            <Image Source="{Binding StarOnImg}" 
+                                   IsVisible="{Binding IsFourthOn}"
+                                   HeightRequest="24"/>
+                            <Image Source="{Binding StarOffImg}" 
+                                   IsVisible="{Binding IsFourthOff}"
+                                   HeightRequest="24"/>
+
+                            <Image Source="{Binding StarOnImg}" 
+                                   IsVisible="{Binding IsFifthOn}"
+                                   HeightRequest="24"/>
+                            <Image Source="{Binding StarOffImg}" 
+                                   IsVisible="{Binding IsFifthOff}"
+                                   HeightRequest="24"/>
+                        </StackLayout>
+                    </StackLayout>
 
                 </Grid>
             </local:GradientStackLayout>
