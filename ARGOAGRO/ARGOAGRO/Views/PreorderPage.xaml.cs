@@ -8,5 +8,10 @@ namespace ARGOAGRO.Views
         {
             InitializeComponent();
         }
+
+        private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+
+        }
     }
 }

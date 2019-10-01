@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:local="clr-namespace:ARGOAGRO"
+             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.PreorderPage">
     <ScrollView>
@@ -41,6 +42,7 @@
                            Source="{Binding Product.ImageName}"
                            HeightRequest="120"/>
 
+                    <!-- Product Detail -->
                     <Label Grid.Row="0"
                            Grid.Column="1"
                            Text="{Binding Product.ProductName}"
@@ -74,7 +76,10 @@
                            TextColor="#ffffff"
                            FontSize="16"
                            Margin="0,10,0,5"/>
+                    
+                    <!-- End of Product Detail -->
 
+                    <!-- Adds/Subs Quantity Button -->
                     <StackLayout Grid.Row="4"
                                  Grid.Column="1"
                                  Orientation="Horizontal">
@@ -102,6 +107,61 @@
                                    FontSize="16" />
                         </Frame>
                     </StackLayout>
+
+                    <Label Grid.Row="5"
+                           Grid.ColumnSpan="2"
+                           Text="Tujuan Pengiriman"
+                           TextColor="#ffffff"
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand"/>
+                    
+                    <Label Grid.Row="6"
+                           Grid.ColumnSpan="2"
+                           Text="Nama Lengkap"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           HorizontalOptions="StartAndExpand" />
+                    <Frame Grid.Row="7" Grid.ColumnSpan="2" 
+                           BackgroundColor="White" 
+                           CornerRadius="5" 
+                           HeightRequest="40" 
+                           Padding="10, 0"
+                           Margin="0,5">
+                        <local:CustomEntry MaxLength="40" FontSize="14"/>
+                    </Frame>
+
+                    <Label Grid.Row="8"
+                           Grid.ColumnSpan="2"
+                           Text="Telepon"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           HorizontalOptions="StartAndExpand" />
+                    <Frame Grid.Row="9" Grid.ColumnSpan="2" 
+                           BackgroundColor="White" 
+                           CornerRadius="5" 
+                           HeightRequest="40" 
+                           Padding="10, 0"
+                           Margin="0,5">
+                        <local:CustomEntry MaxLength="40" FontSize="14"/>
+                    </Frame>
+
+
+                    <Label Grid.Row="10"
+                           Grid.ColumnSpan="2"
+                           Text="Alamat"
+                           TextColor="#ffffff"
+                           FontSize="14"
+                           HorizontalOptions="StartAndExpand" />
+                    <Frame Grid.Row="11" Grid.ColumnSpan="2" 
+                           BackgroundColor="White" 
+                           CornerRadius="5" 
+                           HeightRequest="40" 
+                           Padding="10, 0"
+                           Margin="0,5">
+                        <local:CustomEntry MaxLength="40" FontSize="14"/>
+                    </Frame>
+
+                    
 
                 </Grid>
             </local:GradientStackLayout>
