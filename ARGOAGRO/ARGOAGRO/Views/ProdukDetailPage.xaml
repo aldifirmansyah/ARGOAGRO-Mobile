@@ -124,7 +124,11 @@
                        Text="Lihat Selengkapnya"
                        TextColor="#95a5a6"
                        FontSize="18"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenDetailsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
 
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="CenterAndExpand"

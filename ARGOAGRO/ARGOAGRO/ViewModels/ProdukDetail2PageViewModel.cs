@@ -102,9 +102,9 @@ namespace ARGOAGRO.ViewModels
 
         public override void OnNavigatedTo(INavigationParameters param)
         {
-            if (!param.ContainsKey("productType")) return;
+            if (!param.ContainsKey("theProduct")) return;
 
-            Product = param.GetValue<ProductViewModel>("productType");
+            Product = param.GetValue<ProductViewModel>("theProduct");
             setStarsOn();
 
         }

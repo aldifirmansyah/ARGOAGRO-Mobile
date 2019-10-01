@@ -98,6 +98,16 @@ namespace ARGOAGRO.ViewModels
 
 
 
+        public DelegateCommand OpenDetailsCommand => new DelegateCommand(async () =>
+        {
+            var param = new NavigationParameters();
+            var key = "theProduct";
+
+            param.Add(key, Product);
+
+            await _navigationService.NavigateAsync("ProdukDetail2Page", param);
+        });
+
         public ProdukDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
