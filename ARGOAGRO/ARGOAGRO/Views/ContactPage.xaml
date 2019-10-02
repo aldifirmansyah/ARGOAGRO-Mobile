@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ARGOAGRO"
+             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ARGOAGRO.Views.ContactPage">
+    <ScrollView>
+        <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" Padding="10">
+            <Frame CornerRadius="20"
+                   Padding="0,-10"
+                   IsClippedToBounds="True">
+                <Grid RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" 
+                           Source="{Binding ContactImg}"
+                           HeightRequest="200"/>
+
+                    <Label Grid.Row="1"
+                           Text="Kontak Kami"
+                           TextColor="#ffffff"
+                           FontSize="30"
+                           Margin="10,-60,0,0"/>
+                </Grid>
+            </Frame>
+
+            <Label Text="PT ARGOAGRO MOVING\nTOWARDS FOR AGRICULTURE\nMADIUN"
+                   TextColor="#ffffff"
+                   FontSize="24"
+                   Margin="10,0"/>
+
+            <Grid RowSpacing="0" Padding="10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.25*"/>
+                    <ColumnDefinition Width="8.75*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Icons -->
+                <Image Grid.Row="0"
+                       Grid.Column="0"
+                       Source="{Binding PhoneImg}"
+                       HeightRequest="24"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <Image Grid.Row="1"
+                       Grid.Column="0"
+                       Source="{Binding PhoneImg}"
+                       HeightRequest="24"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <Image Grid.Row="2"
+                       Grid.Column="0"
+                       Source="{Binding PhoneImg}"
+                       HeightRequest="24"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <!-- Info -->
+                <Label Grid.Row="0"
+                       Grid.Column="1" 
+                       Text="+628285319776"
+                       TextColor="#ffffff"
+                       FontSize="14"/>
+                <Label Grid.Row="1"
+                       Grid.Column="1" 
+                       Text="layananargo@gmail.com"
+                       TextColor="#ffffff"
+                       FontSize="14"/>
+                <Label Grid.Row="2"
+                       Grid.Column="1" 
+                       Text="Jl. Raya Madiun - Surabaya No. 26,\nMaron, Purwosari, Wonoasri,\nMadiun, Jawa Timur 63157"
+                       TextColor="#ffffff"
+                       FontSize="14"/>
+            </Grid>
+
+            <Grid RowSpacing="0" Padding="10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"
+                       Text="Bank Transfer"
+                       TextColor="#ffffff"
+                       FontSize="16"/>
+            </Grid>
+        </local:GradientStackLayout>
+    </ScrollView>
+  
+</ContentPage>
