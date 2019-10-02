@@ -14,7 +14,43 @@ namespace ARGOAGRO.ViewModels
 	public class ProductReviewPageViewModel : ViewModelBase
 	{
         private readonly INavigationService _navigationService;
-        private ProductService productService = new ProductService();  
+        private ProductService productService = new ProductService();
+
+        private String _fullName;
+        private String _email;
+        private String _location;
+        private String _description;
+        private int _rating;
+
+        public String FullName
+        {
+            get { return _fullName; }
+            set { SetProperty(ref _fullName, value); }
+        }
+
+        public String Email
+        {
+            get { return _email; }
+            set { SetProperty(ref _email, value); }
+        }
+
+        public String Location
+        {
+            get { return _location; }
+            set { SetProperty(ref _location, value); }
+        }
+
+        public String Description
+        {
+            get { return _description; }
+            set { SetProperty(ref _description, value); }
+        }
+
+        public int Rating
+        {
+            get { return _rating; }
+            set { SetProperty(ref _rating, value); }
+        }
 
         private ProductViewModel _product;
         public ProductViewModel Product
@@ -69,8 +105,6 @@ namespace ARGOAGRO.ViewModels
             {
                 setRatingStars(review);
             }
-
-            //ProductReview = ProductReviews.ElementAt(0);
             
         }
 
@@ -161,42 +195,6 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _isFifthOff, value); }
         }
         
-        // Boolean for setting the review rating
-        private bool _isRatingOne;
-        public bool IsRatingOne
-        {
-            get { return _isRatingOne; }
-            set { SetProperty(ref _isRatingOne, value); }
-        }
-
-        private bool _isRatingTwo;
-        public bool IsRatingTwo
-        {
-            get { return _isRatingTwo; }
-            set { SetProperty(ref _isRatingTwo, value); }
-        }
-
-        private bool _isRatingThree;
-        public bool IsRatingThree
-        {
-            get { return _isRatingThree; }
-            set { SetProperty(ref _isRatingThree, value); }
-        }
-
-        private bool _isRatingFour;
-        public bool IsRatingFour
-        {
-            get { return _isRatingFour; }
-            set { SetProperty(ref _isRatingFour, value); }
-        }
-
-        private bool _isRatingFive;
-        public bool IsRatingFive
-        {
-            get { return _isRatingFive; }
-            set { SetProperty(ref _isRatingFive, value); }
-        }
-
         // Image Source
 
         public ImageSource StarOnImg
