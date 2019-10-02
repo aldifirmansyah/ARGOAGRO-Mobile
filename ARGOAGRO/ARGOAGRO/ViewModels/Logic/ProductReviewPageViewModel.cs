@@ -23,6 +23,13 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _product, value); }
         }
 
+        private IEnumerable<ProductReviewViewModel> _productReviews;
+        public IEnumerable<ProductReviewViewModel> ProductReviews
+        {
+            get { return _productReviews; }
+            set { SetProperty(ref _productReviews, value); }
+        }
+
         private ProductReviewViewModel _productReview;
         public ProductReviewViewModel ProductReview
         {
@@ -56,8 +63,10 @@ namespace ARGOAGRO.ViewModels
 
         private async void setProductReview()
         {
-            var reviews = await productService.GetProductReviewByProductID(Product.ID);
-            ProductReview = reviews.ElementAt(0);
+            ProductReviews = await productService.GetProductReviewByProductID(Product.ID);
+            
+
+            ProductReview = ProductReviews.ElementAt(0);
             setRatingStars();
         }
 
