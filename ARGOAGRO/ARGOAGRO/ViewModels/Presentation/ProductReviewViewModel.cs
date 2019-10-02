@@ -1,6 +1,7 @@
 ﻿using ARGOAGRO.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using Xamarin.Forms;
 
@@ -21,7 +22,10 @@ namespace ARGOAGRO.ViewModels.Presentation
         public bool IsRatingFive { get; set; }
 
 
-        public ProductReviewViewModel() { }
+        public ProductReviewViewModel()
+        {
+            
+        }
 
         public ProductReviewViewModel(ProductReviewModel obj)
         {
@@ -33,8 +37,12 @@ namespace ARGOAGRO.ViewModels.Presentation
             Description = obj.Description;
             Rating = obj.Rating;
 
-
             //setRatingStars(obj);
+            IsRatingOne = (Rating >= 1) ? true : false;
+            IsRatingTwo = (Rating >= 2) ? true : false;
+            IsRatingThree = (Rating >= 3) ? true : false;
+            IsRatingFour = (Rating >= 4) ? true : false;
+            IsRatingFive = (Rating == 5) ? true : false;
         }
 
         

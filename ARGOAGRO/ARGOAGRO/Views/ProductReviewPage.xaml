@@ -177,14 +177,11 @@
                            FontAttributes="Bold"/>
                 </Frame>
             </local:GradientStackLayout>
-
-            
-            
-            
-            <!-- List of Reviews -->
+         
+            <!-- View Reviews Section -->
             
             <StackLayout BackgroundColor="#ffffff"
-                         Padding="20">
+                         Padding="20,10">
                 <Label Text="Penilaian Produk"
                        TextColor="#094C59"
                        FontAttributes="Bold"
@@ -211,14 +208,19 @@
 
                                     <StackLayout Grid.Row="0" Orientation="Horizontal">
                                         <Image Source="{Binding StarOnImg}"
+                                               IsVisible="{Binding IsRatingOne}"
                                                HeightRequest="16"/>
                                         <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingTwo}"
                                                HeightRequest="16"/>
                                         <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingThree}"
                                                HeightRequest="16"/>
                                         <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingFour}"
                                                HeightRequest="16"/>
                                         <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingFive}"
                                                HeightRequest="16"/>
                                     </StackLayout>
 

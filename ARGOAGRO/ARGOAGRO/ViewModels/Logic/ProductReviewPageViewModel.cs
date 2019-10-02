@@ -65,22 +65,26 @@ namespace ARGOAGRO.ViewModels
         {
             ProductReviews = await productService.GetProductReviewByProductID(Product.ID);
             
+            foreach (ProductReviewViewModel review in ProductReviews)
+            {
+                setRatingStars(review);
+            }
 
-            ProductReview = ProductReviews.ElementAt(0);
-            setRatingStars();
+            //ProductReview = ProductReviews.ElementAt(0);
+            
         }
 
-        private void setRatingStars()
+        private void setRatingStars(ProductReviewViewModel review)
         {
-            if (ProductReview.Rating >= 1) IsRatingOne = true; else return;
+            if (review.Rating >= 1) review.IsRatingOne = true; else return;
 
-            if (ProductReview.Rating >= 2) IsRatingTwo = true; else return;
+            if (review.Rating >= 2) review.IsRatingTwo = true; else return;
 
-            if (ProductReview.Rating >= 3) IsRatingThree = true; else return;
+            if (review.Rating >= 3) review.IsRatingThree = true; else return;
 
-            if (ProductReview.Rating >= 4) IsRatingFour = true; else return;
+            if (review.Rating >= 4) review.IsRatingFour = true; else return;
 
-            if (ProductReview.Rating >= 5) IsRatingFive = true; else return;
+            if (review.Rating >= 5) review.IsRatingFive = true; else return;
         }
 
 

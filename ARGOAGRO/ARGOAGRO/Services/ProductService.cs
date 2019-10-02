@@ -146,7 +146,7 @@ namespace ARGOAGRO.Services
                     Email = "intandwi@gmail.com",
                     Location = "Jakarta",
                     Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
-                    "karena packing saat sudah sampai sedikit rusak",
+                    "karena packing saat sudah sampai sedikit rusak.",
                     Rating = 5
                 },
                 new ProductReviewViewModel()
@@ -156,7 +156,7 @@ namespace ARGOAGRO.Services
                     Email = "intandwi@gmail.com",
                     Location = "Jakarta",
                     Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
-                    "karena packing saat sudah sampai sedikit rusak",
+                    "karena packing saat sudah sampai sedikit rusak.",
                     Rating = 4
                 },
                 new ProductReviewViewModel()
@@ -166,7 +166,7 @@ namespace ARGOAGRO.Services
                     Email = "intandwi@gmail.com",
                     Location = "Jakarta",
                     Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
-                    "karena packing saat sudah sampai sedikit rusak",
+                    "karena packing saat sudah sampai sedikit rusak.",
                     Rating = 5
                 },
                 new ProductReviewViewModel()
@@ -176,7 +176,7 @@ namespace ARGOAGRO.Services
                     Email = "intandwi@gmail.com",
                     Location = "Jakarta",
                     Description = "Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus " +
-                    "karena packing saat sudah sampai sedikit rusak",
+                    "karena packing saat sudah sampai sedikit rusak.",
                     Rating = 4
                 }
             };
