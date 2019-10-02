@@ -23,10 +23,78 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                
-                
-                
+
+                <Label Grid.Row="0"
+                       Text="Nama Lengkap"
+                       TextColor="#ffffff"
+                       FontSize="14"
+                       HorizontalOptions="StartAndExpand"
+                       Margin="0,10,0,0"/>
+                <Frame Grid.Row="1" 
+                       BackgroundColor="White" 
+                       CornerRadius="5" 
+                       HeightRequest="40" 
+                       Padding="10, 0"
+                       Margin="0,5">
+                    <local:CustomEntry MaxLength="40" FontSize="14"/>
+                </Frame>
+
+                <Label Grid.Row="2"
+                       Text="Email"
+                       TextColor="#ffffff"
+                       FontSize="14"
+                       HorizontalOptions="StartAndExpand"
+                       Margin="0,5,0,0"/>
+                <Frame Grid.Row="3"
+                       BackgroundColor="White" 
+                       CornerRadius="5" 
+                       HeightRequest="40" 
+                       Padding="10, 0"
+                       Margin="0,5">
+                    <local:CustomEntry MaxLength="40" FontSize="14"/>
+                </Frame>
+
+                <Label Grid.Row="4"
+                       Text="No. HP"
+                       TextColor="#ffffff"
+                       FontSize="14"
+                       HorizontalOptions="StartAndExpand"
+                       Margin="0,5,0,0"/>
+                <Frame Grid.Row="5" 
+                       BackgroundColor="White" 
+                       CornerRadius="5" 
+                       HeightRequest="40" 
+                       Padding="10, 0"
+                       Margin="0,5">
+                    <local:CustomEntry MaxLength="40" FontSize="14"/>
+                </Frame>
+
+                <Label Grid.Row="6"
+                       Text="Pertanyaan"
+                       TextColor="#ffffff"
+                       FontSize="14"
+                       HorizontalOptions="StartAndExpand" />
+                <Frame Grid.Row="7"
+                       BackgroundColor="White" 
+                       CornerRadius="5"
+                       HeightRequest="180"
+                       Padding="10, 0"
+                       Margin="0,5">
+                    <local:CustomEntry FontSize="14"/>
+                </Frame>
             </Grid>
+
+            <Frame BackgroundColor="#30C638"
+                   HorizontalOptions="End"
+                   CornerRadius="5"
+                   Padding="20,10"
+                   Margin="0,0,10,10"
+                   HasShadow="True">
+                <Label Text="KIRIM"
+                       TextColor="#ffffff"
+                       FontSize="14"
+                       FontAttributes="Bold"/>
+            </Frame>
         </local:GradientStackLayout>
     </ScrollView>
   
