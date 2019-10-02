@@ -9,6 +9,31 @@
 
     <ScrollView>
         <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" Padding="10">
+
+            <Frame CornerRadius="20"
+                   Padding="0,-10"
+                   IsClippedToBounds="True">
+                <Grid RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" 
+                           Source="{Binding QuestionImg}"
+                           HeightRequest="200"/>
+
+                    <Label Grid.Row="1"
+                           Text="Pertanyaan"
+                           TextColor="#ffffff"
+                           FontSize="30"
+                           Margin="10,-60,0,0"/>
+                </Grid>
+            </Frame>
+
             <Grid RowSpacing="0" Padding="10,0,10,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>

@@ -3,6 +3,7 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace ARGOAGRO.ViewModels
 {
@@ -12,5 +13,10 @@ namespace ARGOAGRO.ViewModels
         {
 
         }
-	}
+
+        public ImageSource QuestionImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.pertanyaan_header.jpg"); }
+        }
+    }
 }
