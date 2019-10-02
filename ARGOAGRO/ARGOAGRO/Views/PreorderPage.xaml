@@ -255,6 +255,7 @@
                         TextColor="#000000"
                         FontSize="14"
                         FontAttributes="Bold"
+                        Command="{Binding EnterShoppingCartCommand}"
                         BackgroundColor="#f9ca24"
                         BorderRadius="10"
                         Padding="0"/>

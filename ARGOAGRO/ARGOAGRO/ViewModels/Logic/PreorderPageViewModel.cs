@@ -19,6 +19,11 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _product, value); }
         }
 
+        public DelegateCommand EnterShoppingCartCommand => new DelegateCommand(() =>
+        {
+            _navigationService.NavigateAsync("/MainPage/NavigationPage/HomePage");
+        });
+
         public PreorderPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
