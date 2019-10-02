@@ -24,5 +24,48 @@ namespace ARGOAGRO.ViewModels
             get { return ImageSource.FromResource("ARGOAGRO.Img.call.png"); }
         }
 
+        // transfer img
+        public ImageSource BcaImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.bca.png"); }
+        }
+
+        public ImageSource BniImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.bni.jpg"); }
+        }
+
+        public ImageSource MandiriImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.mandiri.jpg"); }
+        }
+
+        // payment
+        public ImageSource VisaImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.visa.png"); }
+        }
+
+        public ImageSource MastercardImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.mastercard.png"); }
+        }
+
+        // sending method
+        public ImageSource TikiImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.tiki.png"); }
+        }
+
+        public ImageSource JneImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.jne.png"); }
+        }
+
+        // media
+        public ImageSource SindoImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.sindonews.png"); }
+        }
     }
 }
