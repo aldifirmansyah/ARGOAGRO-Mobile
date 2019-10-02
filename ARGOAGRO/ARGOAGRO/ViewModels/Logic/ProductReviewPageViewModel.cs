@@ -15,6 +15,8 @@ namespace ARGOAGRO.ViewModels
 	{
         private readonly INavigationService _navigationService;
         private ProductService productService = new ProductService();
+        private ProductViewModel _product;
+        private IEnumerable<ProductReviewViewModel> _productReviews;
 
         private String _fullName;
         private String _email;
@@ -22,6 +24,32 @@ namespace ARGOAGRO.ViewModels
         private String _description;
         private int _rating;
 
+        private bool _isFirstOn;
+        private bool _isSecondOn;
+        private bool _isThirdOn;
+        private bool _isFourthOn;
+        private bool _isFifthOn;
+
+        private bool _isFirstOff;
+        private bool _isSecondOff;
+        private bool _isThirdOff;
+        private bool _isFourthOff;
+        private bool _isFifthOff;
+
+        // objects to be processed
+        public ProductViewModel Product
+        {
+            get { return _product; }
+            set { SetProperty(ref _product, value); }
+        }
+
+        public IEnumerable<ProductReviewViewModel> ProductReviews
+        {
+            get { return _productReviews; }
+            set { SetProperty(ref _productReviews, value); }
+        }
+
+        // Product Review Attributes
         public String FullName
         {
             get { return _fullName; }
@@ -52,25 +80,58 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _rating, value); }
         }
 
-        private ProductViewModel _product;
-        public ProductViewModel Product
+        // Boolean for set the correspondence stars off
+        public bool IsFirstOn
         {
-            get { return _product; }
-            set { SetProperty(ref _product, value); }
+            get { return _isFirstOn; }
+            set { SetProperty(ref _isFirstOn, value); }
+        }
+        public bool IsSecondOn
+        {
+            get { return _isSecondOn; }
+            set { SetProperty(ref _isSecondOn, value); }
+        }
+        public bool IsThirdOn
+        {
+            get { return _isThirdOn; }
+            set { SetProperty(ref _isThirdOn, value); }
+        }
+        public bool IsFourthOn
+        {
+            get { return _isFourthOn; }
+            set { SetProperty(ref _isFourthOn, value); }
+        }
+        public bool IsFifthOn
+        {
+            get { return _isFifthOn; }
+            set { SetProperty(ref _isFifthOn, value); }
         }
 
-        private IEnumerable<ProductReviewViewModel> _productReviews;
-        public IEnumerable<ProductReviewViewModel> ProductReviews
+        // Boolean for set the correspondence stars off
+        public bool IsFirstOff
         {
-            get { return _productReviews; }
-            set { SetProperty(ref _productReviews, value); }
+            get { return _isFirstOff; }
+            set { SetProperty(ref _isFirstOff, value); }
         }
-
-        private ProductReviewViewModel _productReview;
-        public ProductReviewViewModel ProductReview
+        public bool IsSecondOff
         {
-            get { return _productReview; }
-            set { SetProperty(ref _productReview, value); }
+            get { return _isSecondOff; }
+            set { SetProperty(ref _isSecondOff, value); }
+        }
+        public bool IsThirdOff
+        {
+            get { return _isThirdOff; }
+            set { SetProperty(ref _isThirdOff, value); }
+        }
+        public bool IsFourthOff
+        {
+            get { return _isFourthOff; }
+            set { SetProperty(ref _isFourthOff, value); }
+        }
+        public bool IsFifthOff
+        {
+            get { return _isFifthOff; }
+            set { SetProperty(ref _isFifthOff, value); }
         }
 
         public ProductReviewPageViewModel(INavigationService navigationService) : base(navigationService)
@@ -84,7 +145,7 @@ namespace ARGOAGRO.ViewModels
             if (!param.ContainsKey("theProduct")) return;
 
             Product = param.GetValue<ProductViewModel>("theProduct");
-            setProductReview();
+            populateReviews();
             
         }
 
@@ -97,7 +158,7 @@ namespace ARGOAGRO.ViewModels
             IsFifthOff = true;
         }
 
-        private async void setProductReview()
+        private async void populateReviews()
         {
             ProductReviews = await productService.GetProductReviewByProductID(Product.ID);
             
@@ -119,80 +180,6 @@ namespace ARGOAGRO.ViewModels
             if (review.Rating >= 4) review.IsRatingFour = true; else return;
 
             if (review.Rating >= 5) review.IsRatingFive = true; else return;
-        }
-
-
-        // Boolean for set the correspondence stars off
-        private bool _isFirstOn;
-        public bool IsFirstOn
-        {
-            get { return _isFirstOn; }
-            set { SetProperty(ref _isFirstOn, value); }
-        }
-
-        private bool _isSecondOn;
-        public bool IsSecondOn
-        {
-            get { return _isSecondOn; }
-            set { SetProperty(ref _isSecondOn, value); }
-        }
-
-        private bool _isThirdOn;
-        public bool IsThirdOn
-        {
-            get { return _isThirdOn; }
-            set { SetProperty(ref _isThirdOn, value); }
-        }
-
-        private bool _isFourthOn;
-        public bool IsFourthOn
-        {
-            get { return _isFourthOn; }
-            set { SetProperty(ref _isFourthOn, value); }
-        }
-        
-        private bool _isFifthOn;
-        public bool IsFifthOn
-        {
-            get { return _isFifthOn; }
-            set { SetProperty(ref _isFifthOn, value); }
-        }
-
-
-        // Boolean for set the correspondence stars off
-        private bool _isFirstOff;
-        public bool IsFirstOff
-        {
-            get { return _isFirstOff; }
-            set { SetProperty(ref _isFirstOff, value); }
-        }
-
-        private bool _isSecondOff;
-        public bool IsSecondOff
-        {
-            get { return _isSecondOff; }
-            set { SetProperty(ref _isSecondOff, value); }
-        }
-
-        private bool _isThirdOff;
-        public bool IsThirdOff
-        {
-            get { return _isThirdOff; }
-            set { SetProperty(ref _isThirdOff, value); }
-        }
-
-        private bool _isFourthOff;
-        public bool IsFourthOff
-        {
-            get { return _isFourthOff; }
-            set { SetProperty(ref _isFourthOff, value); }
-        }
-
-        private bool _isFifthOff;
-        public bool IsFifthOff
-        {
-            get { return _isFifthOff; }
-            set { SetProperty(ref _isFifthOff, value); }
         }
         
         // Image Source
