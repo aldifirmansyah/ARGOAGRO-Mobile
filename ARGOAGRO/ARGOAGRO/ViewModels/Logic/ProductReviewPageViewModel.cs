@@ -1,9 +1,11 @@
-﻿using ARGOAGRO.ViewModels.Presentation;
+﻿using ARGOAGRO.Services;
+using ARGOAGRO.ViewModels.Presentation;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -12,12 +14,20 @@ namespace ARGOAGRO.ViewModels
 	public class ProductReviewPageViewModel : ViewModelBase
 	{
         private readonly INavigationService _navigationService;
+        private ProductService productService = new ProductService();  
 
         private ProductViewModel _product;
         public ProductViewModel Product
         {
             get { return _product; }
             set { SetProperty(ref _product, value); }
+        }
+
+        private ProductReviewViewModel _productReview;
+        public ProductReviewViewModel ProductReview
+        {
+            get { return _productReview; }
+            set { SetProperty(ref _productReview, value); }
         }
 
         public ProductReviewPageViewModel(INavigationService navigationService) : base(navigationService)
@@ -31,6 +41,7 @@ namespace ARGOAGRO.ViewModels
             if (!param.ContainsKey("theProduct")) return;
 
             Product = param.GetValue<ProductViewModel>("theProduct");
+            setProductReview();
         }
 
         private void setupStars()
@@ -40,6 +51,14 @@ namespace ARGOAGRO.ViewModels
             IsThirdOff = true;
             IsFourthOff = true;
             IsFifthOff = true;
+        }
+
+        private async void setProductReview()
+        {
+            var reviews = await productService.GetProductReviewByProductID(Product.ID);
+            Debug.WriteLine("888888 size: " + reviews.Count());
+            ProductReview = reviews.ElementAt(0);
+            Debug.WriteLine("888888 review by: " + ProductReview.FullName);
         }
 
 

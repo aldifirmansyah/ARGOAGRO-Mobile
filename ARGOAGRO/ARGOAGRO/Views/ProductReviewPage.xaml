@@ -166,7 +166,7 @@
                     </Frame>
                 </Grid>
 
-                <Frame BackgroundColor="#B8E68A"
+                <Frame BackgroundColor="#388E3C"
                        HorizontalOptions="End"
                        CornerRadius="5"
                        Padding="20,10"
