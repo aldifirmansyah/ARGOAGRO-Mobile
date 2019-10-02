@@ -30,9 +30,10 @@
             </Frame>
 
             <StackLayout Orientation="Vertical"
-                     HorizontalOptions="CenterAndExpand"
-                     Padding="20,50,20,0"
-                     BackgroundColor="#f9f9f9">
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="EndAndExpand"
+                         Padding="20,50,20,0"
+                         BackgroundColor="#f9f9f9">
 
                 <Label Text="APA ITU ARGOAGRO?"
                    FontAttributes="Bold"
