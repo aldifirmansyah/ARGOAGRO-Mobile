@@ -32,7 +32,7 @@ namespace ARGOAGRO.ViewModels
             {
                 new MasterItemViewModel { Title = "HOME", PageName = "HomePage" },
                 new MasterItemViewModel { Title = "PRODUK", PageName = "ProdukPage" },
-                new MasterItemViewModel { Title = "PENDAFTARAN AKUN" },
+                new MasterItemViewModel { Title = "PENDAFTARAN AKUN", PageName = "RegisPage" },
                 new MasterItemViewModel { Title = "PERTANYAAN" },
                 new MasterItemViewModel { Title = "KONTAK KAMI" },
                 new MasterItemViewModel { Title = "CARI PRODUK", PageName = "SearchProductPage" }
