@@ -12,10 +12,31 @@
             <Frame CornerRadius="20"
                    Padding="0,-10"
                    IsClippedToBounds="True">
-                <Image Source="{Binding RegisImg}"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       HeightRequest="200"/>
+                <Grid RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" 
+                           Source="{Binding RegisImg}"
+                           HeightRequest="200"/>
+                    
+                    <Label Grid.Row="1"
+                           Text="Pendaftaran"
+                           TextColor="#ffffff"
+                           FontSize="30"
+                           Margin="10,-93,0,0"/>
+                    <Label Grid.Row="2"
+                           Text="Akun"
+                           TextColor="#ffffff"
+                           FontSize="30"
+                           Margin="10,-60,0,0"/>
+                </Grid>
             </Frame>
 
             <Grid RowSpacing="0" Padding="10,0,10,0">
