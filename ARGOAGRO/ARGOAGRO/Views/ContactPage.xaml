@@ -32,7 +32,7 @@
                 </Grid>
             </Frame>
 
-            <Label Text="PT ARGOAGRO MOVING\nTOWARDS FOR AGRICULTURE\nMADIUN"
+            <Label Text="PT ARGOAGRO MOVING TOWARDS FOR AGRICULTURE MADIUN"
                    TextColor="#ffffff"
                    FontSize="24"
                    Margin="10,0"/>
@@ -54,41 +54,47 @@
                        Source="{Binding PhoneImg}"
                        HeightRequest="24"
                        HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="CenterAndExpand"
+                       Margin="0,5,0,5"/>
 
                 <Image Grid.Row="1"
                        Grid.Column="0"
                        Source="{Binding PhoneImg}"
                        HeightRequest="24"
                        HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="CenterAndExpand"
+                       Margin="0,5,0,5"/>
 
                 <Image Grid.Row="2"
                        Grid.Column="0"
                        Source="{Binding PhoneImg}"
                        HeightRequest="24"
                        HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="CenterAndExpand"
+                       Margin="0,5,0,5"/>
 
                 <!-- Info -->
                 <Label Grid.Row="0"
                        Grid.Column="1" 
                        Text="+628285319776"
                        TextColor="#ffffff"
-                       FontSize="14"/>
+                       FontSize="14"
+                       Margin="0,5,0,5"/>
                 <Label Grid.Row="1"
                        Grid.Column="1" 
                        Text="layananargo@gmail.com"
                        TextColor="#ffffff"
-                       FontSize="14"/>
+                       FontSize="14"
+                       Margin="0,5,0,5"/>
                 <Label Grid.Row="2"
                        Grid.Column="1" 
-                       Text="Jl. Raya Madiun - Surabaya No. 26,\nMaron, Purwosari, Wonoasri,\nMadiun, Jawa Timur 63157"
+                       Text="Jl. Raya Madiun - Surabaya No. 26, Maron, Purwosari, Wonoasri, Madiun, Jawa Timur 63157"
                        TextColor="#ffffff"
-                       FontSize="14"/>
+                       FontSize="14"
+                       Margin="0,5,0,5"/>
             </Grid>
 
-            <Grid RowSpacing="0" Padding="10,0">
+            <Grid RowSpacing="0" Padding="10,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
@@ -107,6 +113,37 @@
                        Text="Bank Transfer"
                        TextColor="#ffffff"
                        FontSize="16"/>
+                <StackLayout Grid.Row="1" Padding="0" Margin="0,0,0,10" Orientation="Horizontal">
+                    <Image Source="{Binding BcaImg}" HeightRequest="36"/>
+                    <Image Source="{Binding BniImg}" HeightRequest="36"/>
+                    <Image Source="{Binding MandiriImg}" HeightRequest="36"/>
+                </StackLayout>
+
+                <Label Grid.Row="2"
+                       Text="Metode Pembayaran"
+                       TextColor="#ffffff"
+                       FontSize="16"/>
+                <StackLayout Grid.Row="3" Padding="0" Margin="0,0,0,10" Orientation="Horizontal">
+                    <Image Source="{Binding VisaImg}" HeightRequest="36"/>
+                    <Image Source="{Binding MastercardImg}" HeightRequest="36"/>
+                </StackLayout>
+
+                <Label Grid.Row="4"
+                       Text="Metode Pengiriman"
+                       TextColor="#ffffff"
+                       FontSize="16"/>
+                <StackLayout Grid.Row="5" Padding="0" Margin="0,0,0,10" Orientation="Horizontal">
+                    <Image Source="{Binding TikiImg}" HeightRequest="36"/>
+                    <Image Source="{Binding JneImg}" HeightRequest="36"/>
+                </StackLayout>
+
+                <Label Grid.Row="6"
+                       Text="Liputan Media"
+                       TextColor="#ffffff"
+                       FontSize="16"/>
+                <StackLayout Grid.Row="7" Padding="0" Margin="0,0,0,10" Orientation="Horizontal">
+                    <Image Source="{Binding SindoImg}" HeightRequest="36" HorizontalOptions="Start"/>
+                </StackLayout>
             </Grid>
         </local:GradientStackLayout>
     </ScrollView>

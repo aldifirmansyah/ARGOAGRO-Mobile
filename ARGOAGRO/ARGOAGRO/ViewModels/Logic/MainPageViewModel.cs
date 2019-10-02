@@ -34,7 +34,7 @@ namespace ARGOAGRO.ViewModels
                 new MasterItemViewModel { Title = "PRODUK", PageName = "ProdukPage" },
                 new MasterItemViewModel { Title = "PENDAFTARAN AKUN", PageName = "RegisPage" },
                 new MasterItemViewModel { Title = "PERTANYAAN", PageName = "QuestionPage" },
-                new MasterItemViewModel { Title = "KONTAK KAMI" },
+                new MasterItemViewModel { Title = "KONTAK KAMI", PageName = "ContactPage" },
                 new MasterItemViewModel { Title = "CARI PRODUK", PageName = "SearchProductPage" }
             });
         }
