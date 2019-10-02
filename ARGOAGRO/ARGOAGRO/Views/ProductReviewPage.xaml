@@ -202,32 +202,37 @@
 
                 <StackLayout Grid.Row="1"
                              Orientation="Horizontal">
-                    <Image Source="{Binding StarOnImg}" 
+                    <Image Source="{Binding StarOnImg}"
+                           IsVisible="{Binding IsRatingOne}"
                            HeightRequest="16"/>
                     <Image Source="{Binding StarOnImg}" 
+                           IsVisible="{Binding IsRatingTwo}"
                            HeightRequest="16"/>
                     <Image Source="{Binding StarOnImg}" 
+                           IsVisible="{Binding IsRatingThree}"
                            HeightRequest="16"/>
                     <Image Source="{Binding StarOnImg}" 
+                           IsVisible="{Binding IsRatingFour}"
                            HeightRequest="16"/>
                     <Image Source="{Binding StarOnImg}" 
+                           IsVisible="{Binding IsRatingFive}"
                            HeightRequest="16"/>
                 </StackLayout>
 
                 <Label Grid.Row="2"
-                       Text="Intan Dwi Nuraini"
+                       Text="{Binding ProductReview.FullName}"
                        TextColor="#95a5a6"
                        FontSize="14"
                        FontAttributes="Bold"/>
                 
                 <Label Grid.Row="3"
-                       Text="Jakarta"
+                       Text="{Binding ProductReview.Location}"
                        TextColor="#95a5a6"
                        FontSize="14"
                        FontAttributes="Bold"/>
 
                 <Label Grid.Row="4"
-                       Text="Barang cepat sampai. Rasa tidak mengecewakan. Masukan untuk brand ini, packing lebih diperbagus karena packing saat sudah sampai sedikit rusak"
+                       Text="{Binding ProductReview.Description}"
                        TextColor="#000000"
                        FontSize="12"/>
 

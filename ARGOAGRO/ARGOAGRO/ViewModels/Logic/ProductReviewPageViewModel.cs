@@ -42,6 +42,7 @@ namespace ARGOAGRO.ViewModels
 
             Product = param.GetValue<ProductViewModel>("theProduct");
             setProductReview();
+            
         }
 
         private void setupStars()
@@ -56,9 +57,21 @@ namespace ARGOAGRO.ViewModels
         private async void setProductReview()
         {
             var reviews = await productService.GetProductReviewByProductID(Product.ID);
-            Debug.WriteLine("888888 size: " + reviews.Count());
             ProductReview = reviews.ElementAt(0);
-            Debug.WriteLine("888888 review by: " + ProductReview.FullName);
+            setRatingStars();
+        }
+
+        private void setRatingStars()
+        {
+            if (ProductReview.Rating >= 1) IsRatingOne = true; else return;
+
+            if (ProductReview.Rating >= 2) IsRatingTwo = true; else return;
+
+            if (ProductReview.Rating >= 3) IsRatingThree = true; else return;
+
+            if (ProductReview.Rating >= 4) IsRatingFour = true; else return;
+
+            if (ProductReview.Rating >= 5) IsRatingFive = true; else return;
         }
 
 
@@ -133,6 +146,42 @@ namespace ARGOAGRO.ViewModels
         {
             get { return _isFifthOff; }
             set { SetProperty(ref _isFifthOff, value); }
+        }
+        
+        // Boolean for setting the review rating
+        private bool _isRatingOne;
+        public bool IsRatingOne
+        {
+            get { return _isRatingOne; }
+            set { SetProperty(ref _isRatingOne, value); }
+        }
+
+        private bool _isRatingTwo;
+        public bool IsRatingTwo
+        {
+            get { return _isRatingTwo; }
+            set { SetProperty(ref _isRatingTwo, value); }
+        }
+
+        private bool _isRatingThree;
+        public bool IsRatingThree
+        {
+            get { return _isRatingThree; }
+            set { SetProperty(ref _isRatingThree, value); }
+        }
+
+        private bool _isRatingFour;
+        public bool IsRatingFour
+        {
+            get { return _isRatingFour; }
+            set { SetProperty(ref _isRatingFour, value); }
+        }
+
+        private bool _isRatingFive;
+        public bool IsRatingFive
+        {
+            get { return _isRatingFive; }
+            set { SetProperty(ref _isRatingFive, value); }
         }
 
         // Image Source
