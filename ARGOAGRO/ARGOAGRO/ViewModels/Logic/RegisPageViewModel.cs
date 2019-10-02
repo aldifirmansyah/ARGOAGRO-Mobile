@@ -3,6 +3,7 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace ARGOAGRO.ViewModels
 {
@@ -11,6 +12,11 @@ namespace ARGOAGRO.ViewModels
         public RegisPageViewModel()
         {
 
+        }
+
+        public ImageSource RegisImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.daftar_akun_header.jpg"); }
         }
 	}
 }

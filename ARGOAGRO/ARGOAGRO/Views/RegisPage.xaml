@@ -7,8 +7,18 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.RegisPage">
     <ScrollView>
-        <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59">
-            <Grid RowSpacing="0" Padding="20,20,20,0">
+        <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" Padding="10">
+
+            <Frame CornerRadius="20"
+                   Padding="0,-10"
+                   IsClippedToBounds="True">
+                <Image Source="{Binding RegisImg}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       HeightRequest="200"/>
+            </Frame>
+
+            <Grid RowSpacing="0" Padding="10,0,10,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="0.5*"/>
@@ -177,7 +187,7 @@
                    HorizontalOptions="End"
                    CornerRadius="5"
                    Padding="20,10"
-                   Margin="0,0,20,20"
+                   Margin="0,0,10,10"
                    HasShadow="True">
                 <Label Text="DAFTAR"
                        TextColor="#ffffff"
