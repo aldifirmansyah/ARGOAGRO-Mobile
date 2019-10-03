@@ -261,7 +261,7 @@
                        FontAttributes="Bold"
                        FontSize="24"/>
                 <StackLayout BindableLayout.ItemsSource="{Binding ProductReviews, Mode=OneWay}"
-                             Padding="0">
+                             Padding="0" Margin="0,10,0,0">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Grid RowSpacing="0"

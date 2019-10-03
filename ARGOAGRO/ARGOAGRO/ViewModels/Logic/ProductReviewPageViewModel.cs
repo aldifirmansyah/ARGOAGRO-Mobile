@@ -159,16 +159,16 @@ namespace ARGOAGRO.ViewModels
 
             Product = param.GetValue<ProductViewModel>("theProduct");
             populateReviews();
-            
         }
         private async Task populateReviews()
         {
             var x = await productService.GetProductReviewByProductID(Product.ID);
             ProductReviews = new ObservableCollection<ProductReviewViewModel>(x);
-            
-            
+
+            int i = 1;
             foreach (ProductReviewViewModel review in ProductReviews)
             {
+                Debug.WriteLine("rating ke-" + i + ": " + review.Rating);
                 setRatingStars(review);
             }
         }
@@ -185,7 +185,7 @@ namespace ARGOAGRO.ViewModels
 
             if (review.Rating >= 5) review.IsRatingFive = true; else return;
         }
-
+        
         async Task SubmitReview()
         {
             ProductReviewViewModel newReview = new ProductReviewViewModel()
@@ -195,20 +195,17 @@ namespace ARGOAGRO.ViewModels
                 Email = this.Email,
                 Location = this.Location,
                 Description = this.Description,
-                Rating = 4
+                Rating = getRating()
             };
+            setRatingStars(newReview);
             FullName = "";
             Email = "";
             Location = "";
             Description = "";
 
             await productService.CreateProductReview(newReview);
-            Debug.WriteLine("SIZE before: " + ProductReviews.Count());
-
-            //ProductReviews.Concat(new[] { newReview });
+            
             ProductReviews.Insert(ProductReviews.Count, newReview);
-            Debug.WriteLine("SIZE after: " + ProductReviews.Count());
-            //ProductReviews.Insert(newReview);
         }
 
         private void setupStars()
@@ -249,7 +246,12 @@ namespace ARGOAGRO.ViewModels
             }
         }
 
-        
+
+        private int getRating()
+        {
+            return IsFifthOn ? 5 : IsFourthOn ? 4 : IsThirdOn ? 3 : IsSecondOn ? 2 : 1;
+        }
+
         // Image Source
 
         public ImageSource StarOnImg
