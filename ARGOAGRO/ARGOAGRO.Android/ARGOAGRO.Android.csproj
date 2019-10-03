@@ -71,6 +71,7 @@
     <Compile Include="CustomLabelJustifiedRender.cs" />
     <Compile Include="GradientContentPageRenderer.cs" />
     <Compile Include="GradientStackLayoutRenderer.cs" />
+    <Compile Include="JustifiedLabelRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Persistence\SQLiteDb.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
