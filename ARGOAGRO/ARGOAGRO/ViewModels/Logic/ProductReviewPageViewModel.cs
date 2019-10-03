@@ -188,6 +188,14 @@ namespace ARGOAGRO.ViewModels
         
         async Task SubmitReview()
         {
+            if (string.IsNullOrWhiteSpace(FullName) || 
+                string.IsNullOrWhiteSpace(Email) ||
+                string.IsNullOrWhiteSpace(Location) ||
+                string.IsNullOrWhiteSpace(Description))
+            {
+                return;
+            }
+
             ProductReviewViewModel newReview = new ProductReviewViewModel()
             {
                 ProductID = Product.ID,
