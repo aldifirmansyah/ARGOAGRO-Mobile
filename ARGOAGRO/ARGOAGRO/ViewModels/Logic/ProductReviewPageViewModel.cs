@@ -5,6 +5,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace ARGOAGRO.ViewModels
         private readonly INavigationService _navigationService;
         private ProductService productService = new ProductService();
         private ProductViewModel _product;
-        private IEnumerable<ProductReviewViewModel> _productReviews;
+        private ObservableCollection<ProductReviewViewModel> _productReviews;
 
         private String _fullName;
         private String _email;
@@ -44,7 +45,7 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _product, value); }
         }
 
-        public IEnumerable<ProductReviewViewModel> ProductReviews
+        public ObservableCollection<ProductReviewViewModel> ProductReviews
         {
             get { return _productReviews; }
             set { SetProperty(ref _productReviews, value); }
@@ -162,7 +163,8 @@ namespace ARGOAGRO.ViewModels
         }
         private async Task populateReviews()
         {
-            ProductReviews = await productService.GetProductReviewByProductID(Product.ID);
+            var x = await productService.GetProductReviewByProductID(Product.ID);
+            ProductReviews = new ObservableCollection<ProductReviewViewModel>(x);
             
             
             foreach (ProductReviewViewModel review in ProductReviews)
@@ -195,8 +197,17 @@ namespace ARGOAGRO.ViewModels
                 Description = this.Description,
                 Rating = 4
             };
+            FullName = "";
+            Email = "";
+            Location = "";
+            Description = "";
 
             await productService.CreateProductReview(newReview);
+            Debug.WriteLine("SIZE before: " + ProductReviews.Count());
+
+            //ProductReviews.Concat(new[] { newReview });
+            ProductReviews.Insert(ProductReviews.Count, newReview);
+            Debug.WriteLine("SIZE after: " + ProductReviews.Count());
             //ProductReviews.Insert(newReview);
         }
 

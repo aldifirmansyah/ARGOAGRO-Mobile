@@ -9,20 +9,20 @@ namespace ARGOAGRO.Views
 {
     public partial class ProductReviewPage : ContentPage
     {
-        
+        /*
         private ProductReviewPageViewModel ProductReviewPageVM
         {
             get { return (ProductReviewPageViewModel) this.BindingContext; }
-        }
+        }*/
         
         public ProductReviewPage()
         {
             InitializeComponent();
             Debug.WriteLine("hahahahahahaha");
             //var reviews = new List<ProductReviewViewModel>(ProductReviewPageVM.ProductReviews);
-            var x = ProductReviewPageVM.ProductReviews;
+            //var x = ProductReviewPageVM.ProductReviews;
             
-            Grid gridReview;
+            //Grid gridReview;
 
             //Debug.WriteLine("99999999 size: " + reviews.Count);
             /*
