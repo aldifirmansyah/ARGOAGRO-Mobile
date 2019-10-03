@@ -260,6 +260,11 @@
                        TextColor="#094C59"
                        FontAttributes="Bold"
                        FontSize="24"/>
+                <StackLayout x:Name="ReviewsStackLayout"
+                             Padding="0">
+                    
+                </StackLayout>
+                
                 
                 <ListView ItemsSource="{Binding ProductReviews, Mode=TwoWay}"
                           HasUnevenRows="True">
