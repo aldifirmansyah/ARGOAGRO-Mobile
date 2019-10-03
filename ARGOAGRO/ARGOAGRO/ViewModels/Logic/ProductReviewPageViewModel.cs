@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace ARGOAGRO.ViewModels
@@ -134,6 +135,11 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _isFifthOff, value); }
         }
 
+        public DelegateCommand SubmitReviewCommand => new DelegateCommand(async () =>
+        {
+            await SubmitReview();
+        });
+
         public ProductReviewPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
@@ -180,6 +186,21 @@ namespace ARGOAGRO.ViewModels
             if (review.Rating >= 4) review.IsRatingFour = true; else return;
 
             if (review.Rating >= 5) review.IsRatingFive = true; else return;
+        }
+
+        async Task SubmitReview()
+        {
+            ProductReviewViewModel newReview = new ProductReviewViewModel()
+            {
+                ProductID = Product.ID,
+                FullName = this.FullName,
+                Email = this.Email,
+                Location = this.Location,
+                Description = this.Description,
+                Rating = 4
+            };
+
+            await productService.CreateProductReview(newReview);
         }
         
         // Image Source
