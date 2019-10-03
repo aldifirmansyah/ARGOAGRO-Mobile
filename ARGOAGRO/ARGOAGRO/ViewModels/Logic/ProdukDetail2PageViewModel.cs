@@ -118,7 +118,6 @@ namespace ARGOAGRO.ViewModels
         public ProdukDetail2PageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
-
         }
 
         public override void OnNavigatedTo(INavigationParameters param)
@@ -127,7 +126,6 @@ namespace ARGOAGRO.ViewModels
 
             Product = param.GetValue<ProductViewModel>("theProduct");
             setStarsOn();
-
         }
 
         /// <summary>
@@ -135,8 +133,6 @@ namespace ARGOAGRO.ViewModels
         /// </summary>
         private void setStarsOn()
         {
-            Debug.WriteLine("hahaha rating: " + Product.Rating);
-
             if (Product.Rating >= 1) IsFirstOn = true; else IsFirstOff = true;
 
             if (Product.Rating >= 2) IsSecondOn = true; else IsSecondOff = true;
