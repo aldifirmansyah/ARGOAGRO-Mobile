@@ -24,6 +24,16 @@ namespace ARGOAGRO.ViewModels
             get { return ImageSource.FromResource("ARGOAGRO.Img.call.png"); }
         }
 
+        public ImageSource MailImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.envelope.png"); }
+        }
+
+        public ImageSource LocImg
+        {
+            get { return ImageSource.FromResource("ARGOAGRO.Img.location.png"); }
+        }
+
         // transfer img
         public ImageSource BcaImg
         {
