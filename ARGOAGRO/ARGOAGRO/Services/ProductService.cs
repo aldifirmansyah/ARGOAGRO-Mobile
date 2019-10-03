@@ -180,8 +180,17 @@ namespace ARGOAGRO.Services
                     Rating = 4
                 }
             };
-
-            var result = new List<ProductReviewViewModel>(productReviewDummies.Where(data => data.ProductID == productID));
+          
+            var dummy = new List<ProductReviewViewModel>(productReviewDummies.Where(data => data.ProductID == productID))[0];
+            var result = new List<ProductReviewViewModel>();
+            result.Add(new ProductReviewViewModel(new ProductReviewModel() {
+                ProductID = dummy.ProductID,
+                FullName = dummy.FullName,
+                Email = dummy.Email,
+                Location = dummy.Location,
+                Description = dummy.Description,
+                Rating = dummy.Rating
+        }));
 
             await _localDbConnection.CreateTableAsync<ProductReviewModel>();
             var productReviewModels = await _localDbConnection.Table<ProductReviewModel>().Where(data => data.ProductID == productID).ToListAsync();

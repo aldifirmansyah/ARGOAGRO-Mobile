@@ -10,35 +10,6 @@
              StartColor="#B8E68A"
              EndColor="#094C59">
     <RelativeLayout>
-        <Frame BackgroundColor="#094C59"
-               CornerRadius="10"
-               WidthRequest="300"
-               HeightRequest="180"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                                                                 Property=Height,
-                                                                 Factor=0.1}"
-               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                                                                 Property=Width,
-                                                                 Factor=0.5,
-                                                                 Constant=-170}">
-            <StackLayout Orientation="Vertical">
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="{Binding StoreImg}" Aspect="AspectFill" WidthRequest="100"/>
-                    <Label Text="Cari Produk" FontSize="36" TextColor="White" VerticalOptions="Center" FontAttributes="Bold"/>
-                </StackLayout>
-                <Frame BackgroundColor="White" CornerRadius="5" HeightRequest="40" Padding="10, 0">
-                    <StackLayout Orientation="Horizontal">
-                        <Image Source="{Binding SearchIcon}">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding SearchIconClickedCommand}"/>
-                            </Image.GestureRecognizers>
-                        </Image>
-                        <local:CustomEntry Placeholder="Search" WidthRequest="250" MaxLength="25" Unfocused="CustomEntry_Unfocused" ReturnCommand="{Binding SearchCommand}"
-                                           Text="{Binding SearchText, Mode=TwoWay}"/>
-                    </StackLayout>
-                </Frame>
-            </StackLayout>
-        </Frame>
         <Image x:Name="MapImg" Source="{Binding MapImg}" Aspect="AspectFill"
                RelativeLayout.YConstraint=
                "{ConstraintExpression Type=RelativeToParent,
@@ -273,5 +244,34 @@
                 <TapGestureRecognizer Command="{Binding LocationClickedCommand}" CommandParameter="durian"/>
             </abstractions:RoundedBoxView.GestureRecognizers>
         </abstractions:RoundedBoxView>
+        <Frame BackgroundColor="#094C59"
+               CornerRadius="10"
+               WidthRequest="300"
+               HeightRequest="180"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                 Property=Height,
+                                                                 Factor=0.1}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                 Property=Width,
+                                                                 Factor=0.5,
+                                                                 Constant=-170}">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{Binding StoreImg}" Aspect="AspectFill" WidthRequest="100"/>
+                    <Label Text="Cari Produk" FontSize="36" TextColor="White" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
+                <Frame BackgroundColor="White" CornerRadius="5" HeightRequest="40" Padding="10, 0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding SearchIcon}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SearchIconClickedCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <local:CustomEntry Placeholder="Search" WidthRequest="250" MaxLength="25" Unfocused="CustomEntry_Unfocused" ReturnCommand="{Binding SearchCommand}"
+                                           Text="{Binding SearchText, Mode=TwoWay}"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Frame>
     </RelativeLayout>
 </page:GradientContentPage>

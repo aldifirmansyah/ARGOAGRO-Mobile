@@ -33,7 +33,6 @@ namespace ARGOAGRO.ViewModels.Presentation
             FullName = obj.FullName;
             Email = obj.Email;
             Location = obj.Location;
-            Description = obj.Location;
             Description = obj.Description;
             Rating = obj.Rating;
 

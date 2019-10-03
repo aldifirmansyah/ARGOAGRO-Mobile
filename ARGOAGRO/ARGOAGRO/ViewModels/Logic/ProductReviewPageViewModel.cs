@@ -164,13 +164,6 @@ namespace ARGOAGRO.ViewModels
         {
             var x = await productService.GetProductReviewByProductID(Product.ID);
             ProductReviews = new ObservableCollection<ProductReviewViewModel>(x);
-
-            int i = 1;
-            foreach (ProductReviewViewModel review in ProductReviews)
-            {
-                Debug.WriteLine("rating ke-" + i + ": " + review.Rating);
-                setRatingStars(review);
-            }
         }
 
         private void setRatingStars(ProductReviewViewModel review)
