@@ -66,41 +66,96 @@
 
                     <StackLayout Grid.Row="4" Grid.Column="1" Margin="0,5,0,10">
                         <StackLayout Orientation="Horizontal">
-                            
+
+                            <!-- First Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsFirstOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="1"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsFirstOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="1"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Second Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsSecondOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="2"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsSecondOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="2"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Third Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsThirdOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="3"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsThirdOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="3"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Fourth Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsFourthOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="4"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsFourthOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="4"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Fifth Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsFifthOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="5"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsFifthOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="5"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                         </StackLayout>
                     </StackLayout>
 

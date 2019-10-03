@@ -140,6 +140,12 @@ namespace ARGOAGRO.ViewModels
             await SubmitReview();
         });
 
+        public DelegateCommand<String> OnStarClickedCommand => new DelegateCommand<String>((i) =>
+        {
+            onStarsClicked(Int32.Parse(i));
+        });
+
+
         public ProductReviewPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
@@ -154,16 +160,6 @@ namespace ARGOAGRO.ViewModels
             populateReviews();
             
         }
-
-        private void setupStars()
-        {
-            IsFirstOff = true;
-            IsSecondOff = true;
-            IsThirdOff = true;
-            IsFourthOff = true;
-            IsFifthOff = true;
-        }
-
         private async void populateReviews()
         {
             ProductReviews = await productService.GetProductReviewByProductID(Product.ID);
@@ -203,6 +199,45 @@ namespace ARGOAGRO.ViewModels
             await productService.CreateProductReview(newReview);
             //ProductReviews.Insert(newReview);
         }
+
+        private void setupStars()
+        {
+            IsFirstOff = true;
+            IsSecondOff = true;
+            IsThirdOff = true;
+            IsFourthOff = true;
+            IsFifthOff = true;
+        }
+
+        private void onStarsClicked(int rating)
+        {
+            if (rating == 1)
+            {
+                IsFirstOn = IsSecondOff = IsThirdOff = IsFourthOff = IsFifthOff = true;
+                IsFirstOff = IsSecondOn = IsThirdOn = IsFourthOn = IsFifthOn = false;
+            }
+            else if (rating == 2)
+            {
+                IsFirstOn = IsSecondOn = IsThirdOff = IsFourthOff = IsFifthOff = true;
+                IsFirstOff = IsSecondOff = IsThirdOn = IsFourthOn = IsFifthOn = false;
+            }
+            else if (rating == 3)
+            {
+                IsFirstOn = IsSecondOn = IsThirdOn = IsFourthOff = IsFifthOff = true;
+                IsFirstOff = IsSecondOff = IsThirdOff = IsFourthOn = IsFifthOn = false;
+            }
+            else if (rating == 4)
+            {
+                IsFirstOn = IsSecondOn = IsThirdOn = IsFourthOn = IsFifthOff = true;
+                IsFirstOff = IsSecondOff = IsThirdOff = IsFourthOff = IsFifthOn = false;
+            }
+            else
+            {
+                IsFirstOn = IsSecondOn = IsThirdOn = IsFourthOn = IsFifthOn = true;
+                IsFirstOff = IsSecondOff = IsThirdOff = IsFourthOff = IsFifthOff = false;
+            }
+        }
+
         
         // Image Source
 
