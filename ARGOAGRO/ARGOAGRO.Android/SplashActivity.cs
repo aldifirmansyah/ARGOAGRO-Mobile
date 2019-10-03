@@ -22,7 +22,7 @@ namespace ARGOAGRO.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             var mainIntent = new Intent(Application.Context, typeof(MainActivity));
 
             if (Intent.Extras != null)
