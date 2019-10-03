@@ -7,7 +7,7 @@ namespace ARGOAGRO.Models
 {
     public class ProductReviewModel
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public int ProductID { get; set; }
         public string FullName { get; set; }
