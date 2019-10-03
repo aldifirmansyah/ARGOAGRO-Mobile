@@ -171,9 +171,13 @@
                            HeightRequest="120" 
                            Padding="10, 0"
                            Margin="0,5">
+                        <Editor Text="{Binding Description}" 
+                                Placeholder="Type here"
+                                FontSize="14"/>
+                        <!--
                         <local:CustomEntry Text="{Binding Description}" 
                                            Placeholder="Type here"
-                                           FontSize="14"/>
+                                           FontSize="14"/> -->
                     </Frame>
                 </Grid>
 

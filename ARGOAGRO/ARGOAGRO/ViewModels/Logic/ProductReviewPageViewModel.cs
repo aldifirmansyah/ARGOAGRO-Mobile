@@ -201,6 +201,7 @@ namespace ARGOAGRO.ViewModels
             };
 
             await productService.CreateProductReview(newReview);
+            //ProductReviews.Insert(newReview);
         }
         
         // Image Source
