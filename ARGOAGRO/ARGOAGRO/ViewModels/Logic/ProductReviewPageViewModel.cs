@@ -210,7 +210,7 @@ namespace ARGOAGRO.ViewModels
 
         private void setupStars()
         {
-            IsFirstOff = true;
+            IsFirstOn = true;
             IsSecondOff = true;
             IsThirdOff = true;
             IsFourthOff = true;
