@@ -5,6 +5,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace ARGOAGRO.ViewModels
         private readonly INavigationService _navigationService;
         private ProductService productService = new ProductService();
         private ProductViewModel _product;
-        private IEnumerable<ProductReviewViewModel> _productReviews;
+        private ObservableCollection<ProductReviewViewModel> _productReviews;
 
         private String _fullName;
         private String _email;
@@ -44,7 +45,7 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _product, value); }
         }
 
-        public IEnumerable<ProductReviewViewModel> ProductReviews
+        public ObservableCollection<ProductReviewViewModel> ProductReviews
         {
             get { return _productReviews; }
             set { SetProperty(ref _productReviews, value); }
@@ -140,6 +141,12 @@ namespace ARGOAGRO.ViewModels
             await SubmitReview();
         });
 
+        public DelegateCommand<String> OnStarClickedCommand => new DelegateCommand<String>((i) =>
+        {
+            onStarsClicked(Int32.Parse(i));
+        });
+
+
         public ProductReviewPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
@@ -152,27 +159,18 @@ namespace ARGOAGRO.ViewModels
 
             Product = param.GetValue<ProductViewModel>("theProduct");
             populateReviews();
-            
         }
-
-        private void setupStars()
+        private async Task populateReviews()
         {
-            IsFirstOff = true;
-            IsSecondOff = true;
-            IsThirdOff = true;
-            IsFourthOff = true;
-            IsFifthOff = true;
-        }
+            var x = await productService.GetProductReviewByProductID(Product.ID);
+            ProductReviews = new ObservableCollection<ProductReviewViewModel>(x);
 
-        private async void populateReviews()
-        {
-            ProductReviews = await productService.GetProductReviewByProductID(Product.ID);
-            
+            int i = 1;
             foreach (ProductReviewViewModel review in ProductReviews)
             {
+                Debug.WriteLine("rating ke-" + i + ": " + review.Rating);
                 setRatingStars(review);
             }
-            
         }
 
         private void setRatingStars(ProductReviewViewModel review)
@@ -187,9 +185,17 @@ namespace ARGOAGRO.ViewModels
 
             if (review.Rating >= 5) review.IsRatingFive = true; else return;
         }
-
+        
         async Task SubmitReview()
         {
+            if (string.IsNullOrWhiteSpace(FullName) || 
+                string.IsNullOrWhiteSpace(Email) ||
+                string.IsNullOrWhiteSpace(Location) ||
+                string.IsNullOrWhiteSpace(Description))
+            {
+                return;
+            }
+
             ProductReviewViewModel newReview = new ProductReviewViewModel()
             {
                 ProductID = Product.ID,
@@ -197,12 +203,63 @@ namespace ARGOAGRO.ViewModels
                 Email = this.Email,
                 Location = this.Location,
                 Description = this.Description,
-                Rating = 4
+                Rating = getRating()
             };
+            setRatingStars(newReview);
+            FullName = "";
+            Email = "";
+            Location = "";
+            Description = "";
 
             await productService.CreateProductReview(newReview);
+            
+            ProductReviews.Insert(ProductReviews.Count, newReview);
         }
-        
+
+        private void setupStars()
+        {
+            IsFirstOn = true;
+            IsSecondOff = true;
+            IsThirdOff = true;
+            IsFourthOff = true;
+            IsFifthOff = true;
+        }
+
+        private void onStarsClicked(int rating)
+        {
+            if (rating == 1)
+            {
+                IsFirstOn = IsSecondOff = IsThirdOff = IsFourthOff = IsFifthOff = true;
+                IsFirstOff = IsSecondOn = IsThirdOn = IsFourthOn = IsFifthOn = false;
+            }
+            else if (rating == 2)
+            {
+                IsFirstOn = IsSecondOn = IsThirdOff = IsFourthOff = IsFifthOff = true;
+                IsFirstOff = IsSecondOff = IsThirdOn = IsFourthOn = IsFifthOn = false;
+            }
+            else if (rating == 3)
+            {
+                IsFirstOn = IsSecondOn = IsThirdOn = IsFourthOff = IsFifthOff = true;
+                IsFirstOff = IsSecondOff = IsThirdOff = IsFourthOn = IsFifthOn = false;
+            }
+            else if (rating == 4)
+            {
+                IsFirstOn = IsSecondOn = IsThirdOn = IsFourthOn = IsFifthOff = true;
+                IsFirstOff = IsSecondOff = IsThirdOff = IsFourthOff = IsFifthOn = false;
+            }
+            else
+            {
+                IsFirstOn = IsSecondOn = IsThirdOn = IsFourthOn = IsFifthOn = true;
+                IsFirstOff = IsSecondOff = IsThirdOff = IsFourthOff = IsFifthOff = false;
+            }
+        }
+
+
+        private int getRating()
+        {
+            return IsFifthOn ? 5 : IsFourthOn ? 4 : IsThirdOn ? 3 : IsSecondOn ? 2 : 1;
+        }
+
         // Image Source
 
         public ImageSource StarOnImg

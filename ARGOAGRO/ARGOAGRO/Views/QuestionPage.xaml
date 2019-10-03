@@ -105,7 +105,7 @@
                        HeightRequest="180"
                        Padding="10, 0"
                        Margin="0,5">
-                    <local:CustomEntry FontSize="14"/>
+                    <Editor FontSize="14" />
                 </Frame>
             </Grid>
 

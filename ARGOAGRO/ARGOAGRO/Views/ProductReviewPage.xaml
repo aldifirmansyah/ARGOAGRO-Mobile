@@ -66,41 +66,96 @@
 
                     <StackLayout Grid.Row="4" Grid.Column="1" Margin="0,5,0,10">
                         <StackLayout Orientation="Horizontal">
-                            
+
+                            <!-- First Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsFirstOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="1"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsFirstOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="1"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Second Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsSecondOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="2"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsSecondOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="2"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Third Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsThirdOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="3"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsThirdOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="3"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Fourth Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsFourthOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="4"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsFourthOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="4"/>
+                                </Image.GestureRecognizers>
+                            </Image>
 
+                            <!-- Fifth Star -->
                             <Image Source="{Binding StarOnImg}" 
                                    IsVisible="{Binding IsFifthOn}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="5"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="{Binding StarOffImg}" 
                                    IsVisible="{Binding IsFifthOff}"
-                                   HeightRequest="24"/>
+                                   HeightRequest="24">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnStarClickedCommand}"
+                                                          CommandParameter="5"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                         </StackLayout>
                     </StackLayout>
 
@@ -171,9 +226,13 @@
                            HeightRequest="120" 
                            Padding="10, 0"
                            Margin="0,5">
+                        <Editor Text="{Binding Description}" 
+                                Placeholder="Type here"
+                                FontSize="14"/>
+                        <!--
                         <local:CustomEntry Text="{Binding Description}" 
                                            Placeholder="Type here"
-                                           FontSize="14"/>
+                                           FontSize="14"/> -->
                     </Frame>
                 </Grid>
 
@@ -200,8 +259,74 @@
                 <Label Text="Penilaian Produk"
                        TextColor="#094C59"
                        FontAttributes="Bold"
-                       FontSize="24"/>
+                       FontSize="24"
+                       Margin="0,0,0,5"/>
+                <StackLayout BindableLayout.ItemsSource="{Binding ProductReviews, Mode=TwoWay}"
+                             Padding="0" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <Grid RowSpacing="0"
+                                  VerticalOptions="EndAndExpand"
+                                  Padding="0,10,0,10"
+                                  BackgroundColor="#ffffff">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                
+                                <BoxView Grid.Row="0" 
+                                         Color="#95A5A6" 
+                                         HorizontalOptions="FillAndExpand" 
+                                         HeightRequest="0.8"
+                                         Margin="0,0,0,10"/>
+
+                                <StackLayout Grid.Row="1" Orientation="Horizontal">
+                                    <Image Source="{Binding StarOnImg}"
+                                               IsVisible="{Binding IsRatingOne}"
+                                               HeightRequest="16"/>
+                                    <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingTwo}"
+                                               HeightRequest="16"/>
+                                    <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingThree}"
+                                               HeightRequest="16"/>
+                                    <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingFour}"
+                                               HeightRequest="16"/>
+                                    <Image Source="{Binding StarOnImg}" 
+                                               IsVisible="{Binding IsRatingFive}"
+                                               HeightRequest="16"/>
+                                </StackLayout>
+
+                                <Label Grid.Row="2"
+                                           Text="{Binding FullName}"
+                                           TextColor="#95a5a6"
+                                           FontSize="14"
+                                           FontAttributes="Bold"/>
+
+                                <Label Grid.Row="3"
+                                           Text="{Binding Location}"
+                                           TextColor="#95a5a6"
+                                           FontSize="14"
+                                           FontAttributes="Bold"/>
+
+                                <Label Grid.Row="4"
+                                           Text="{Binding Description}"
+                                           TextColor="#000000"
+                                           FontSize="12"/>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
                 
+                <!--
                 <ListView ItemsSource="{Binding ProductReviews, Mode=TwoWay}"
                           HasUnevenRows="True">
                     <ListView.ItemTemplate>
@@ -260,6 +385,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                -->
                           
             </StackLayout>
         </StackLayout>
