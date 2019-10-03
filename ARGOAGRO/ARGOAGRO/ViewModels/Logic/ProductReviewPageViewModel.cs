@@ -160,15 +160,15 @@ namespace ARGOAGRO.ViewModels
             populateReviews();
             
         }
-        private async void populateReviews()
+        private async Task populateReviews()
         {
             ProductReviews = await productService.GetProductReviewByProductID(Product.ID);
+            
             
             foreach (ProductReviewViewModel review in ProductReviews)
             {
                 setRatingStars(review);
             }
-            
         }
 
         private void setRatingStars(ProductReviewViewModel review)
