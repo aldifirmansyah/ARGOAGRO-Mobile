@@ -43,7 +43,7 @@
                    VerticalOptions="Start"
                    Margin="0,0,0,10"/>
 
-                <Label Text="{Binding Description}"
+                <local:JustifiedLabel JustifyText="True" Text="{Binding Description}"
                    TextColor="Black"
                    FontSize="Small"/>
 
