@@ -22,7 +22,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <!--<RowDefinition Height="Auto" />-->
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -91,7 +91,7 @@
                     <Label Text="{Binding Product.TotalSold}"
                            FontSize="12"
                            TextColor="#B8E68A"/>
-                    <Label Text="Terjual | Bergabung "
+                    <Label Text="Terjual | Bergabung"
                            FontSize="12"
                            TextColor="#ffffff"/>
                     <Label Text="22 Bulan Yang Lalu"
@@ -104,6 +104,25 @@
                        TextColor="#ffffff"
                        FontSize="12" />
 
+                <StackLayout Grid.Row="5">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Kode Produk :"
+                           TextColor="#ffffff"
+                           FontSize="14"/>
+                        <Label Text="{Binding Product.ProductCode}"
+                           TextColor="#ffffff"
+                           FontSize="14" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Ketentuan      :"
+                               TextColor="#ffffff"
+                               FontSize="14" />
+                        <Label Text="{Binding Product.Terms}"
+                               TextColor="#ffffff"
+                               FontSize="14" />
+                    </StackLayout>
+                </StackLayout>
+                <!--
                 <StackLayout Grid.Row="5"
                              Orientation="Horizontal">
                     <Label Text="Kode Produk :"
@@ -123,7 +142,7 @@
                        TextColor="#ffffff"
                        FontSize="16" />
                 </StackLayout>
-                
+                -->
             </local:GradientStackLayout>
 
             <StackLayout VerticalOptions="EndAndExpand"
