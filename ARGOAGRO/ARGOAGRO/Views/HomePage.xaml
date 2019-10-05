@@ -6,8 +6,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ARGOAGRO.Views.HomePage">
     <ScrollView>
-        <StackLayout>
-            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59">
+        <StackLayout x:Name="container">
+            <local:GradientStackLayout StartColor="#B8E68A" EndColor="#094C59" VerticalOptions="Start">
                 <Image Source="{Binding LogoImg}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
@@ -18,7 +18,7 @@
                    CornerRadius="10"
                    HasShadow="True"
                    BorderColor="#fefefe"
-                   Margin="60,-40"
+                   Margin="60,-40,60,0"
                    Padding="20">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding BeliSekarangCommand}" />
@@ -28,12 +28,13 @@
                        TextColor="Black"
                        HorizontalOptions="Center"/>
             </Frame>
-
+            
             <StackLayout Orientation="Vertical"
                          HorizontalOptions="CenterAndExpand"
                          VerticalOptions="EndAndExpand"
-                         Padding="20,50,20,0"
-                         BackgroundColor="#f9f9f9">
+                         Padding="20,20,20,0"
+                         BackgroundColor="#f9f9f9"
+                         x:Name="white">
 
                 <Label Text="APA ITU ARGOAGRO?"
                    FontAttributes="Bold"
@@ -68,12 +69,13 @@
                            LineBreakMode="WordWrap"
                            Margin="5,10,10,10" />
                 </StackLayout>
-                             
+
 
                 <Image Source="{Binding AnekaBuahImg}"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="EndAndExpand" />
             </StackLayout>
+
         </StackLayout>
     </ScrollView>
 </ContentPage>
