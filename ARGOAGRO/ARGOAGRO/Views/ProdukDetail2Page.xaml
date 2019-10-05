@@ -109,7 +109,7 @@
                         <Label Text="Kode Produk :"
                            TextColor="#ffffff"
                            FontSize="14"/>
-                        <Label Text="{Binding Product.ProductCode}"
+                        <Label Text="B1256"
                            TextColor="#ffffff"
                            FontSize="14" />
                     </StackLayout>
@@ -117,7 +117,7 @@
                         <Label Text="Ketentuan      :"
                                TextColor="#ffffff"
                                FontSize="14" />
-                        <Label Text="{Binding Product.Terms}"
+                        <Label Text="Minimal pembelian 1 pack"
                                TextColor="#ffffff"
                                FontSize="14" />
                     </StackLayout>
