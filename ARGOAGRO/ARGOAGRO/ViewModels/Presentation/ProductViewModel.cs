@@ -22,5 +22,9 @@ namespace ARGOAGRO.ViewModels.Presentation
         public string Terms { get; set; }
         public IEnumerable<StoreViewModel> Stores { get; set; }
         public int Discount { get; set; }
+
+        public string Price {
+            get { return String.Format("{0:n0}", UnitPrice).Replace(",", "."); ; }        
+        }
     }
 }

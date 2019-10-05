@@ -73,7 +73,7 @@
                         <Label Text="Harga: Rp."
                                TextColor="#ffffff"
                                FontSize="14"/>
-                        <Label Text="{Binding Product.UnitPrice}" 
+                        <Label Text="{Binding Product.Price}" 
                                TextColor="#ffffff"
                                FontSize="14"/>
                         <Label Text="/ pack"
@@ -241,7 +241,7 @@
                         <Label Text="Rp."
                                TextColor="#B8E68A"
                                FontSize="18"/>
-                        <Label Text="{Binding Product.UnitPrice}"
+                        <Label Text="{Binding Product.UnitPrice, StringFormat='{0:n}'}"
                                TextColor="#B8E68A"
                                FontSize="18"/>
                     </StackLayout>
