@@ -4,6 +4,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace ARGOAGRO.ViewModels
@@ -24,8 +25,13 @@ namespace ARGOAGRO.ViewModels
             get { return _orderQuantity; }
             set { SetProperty(ref _orderQuantity, value); }
         }
-       
-        // subtotal
+
+        private int _subtotal;
+        public int Subtotal
+        {
+            get { return _subtotal; }
+            set { SetProperty(ref _subtotal, value); }
+        }
 
         public DelegateCommand EnterShoppingCartCommand => new DelegateCommand(() =>
         {
@@ -34,8 +40,16 @@ namespace ARGOAGRO.ViewModels
 
         public DelegateCommand<string> IsAddQuantityCommand => new DelegateCommand<string>((opr) =>
         {
-            if (opr == "add") OrderQuantity++;
-            else if (OrderQuantity > 0) OrderQuantity--;
+            if (opr == "add")
+            {
+                OrderQuantity++;
+                updateSubtotal();
+            }
+            else if (OrderQuantity > 0)
+            {
+                OrderQuantity--;
+                updateSubtotal();
+            }
         });
 
         public PreorderPageViewModel(INavigationService navigationService) : base(navigationService)
@@ -48,6 +62,12 @@ namespace ARGOAGRO.ViewModels
             if (!param.ContainsKey("theProduct")) return;
 
             Product = param.GetValue<ProductViewModel>("theProduct");
+        }
+
+        private void updateSubtotal()
+        {
+            Subtotal = Product.UnitPrice * OrderQuantity;
+            Debug.WriteLine("88888888 subtotal: " + Subtotal);
         }
     }
 }
