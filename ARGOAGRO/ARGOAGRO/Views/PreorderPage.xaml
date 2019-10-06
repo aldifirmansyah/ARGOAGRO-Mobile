@@ -96,11 +96,15 @@
                                HasShadow="True"
                                BorderColor="#fefefe"
                                Padding="11,3">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding IsAddQuantityCommand}"
+                                                      CommandParameter="add"/>
+                            </Frame.GestureRecognizers>
                             <Label Text="+"
                                    TextColor="#000000"
                                    FontSize="16" />
                         </Frame>
-                        <Label Text="0"
+                        <Label Text="{Binding OrderQuantity}"
                                TextColor="#ffffff"
                                FontSize="16" 
                                VerticalOptions="CenterAndExpand"
@@ -110,6 +114,10 @@
                                HasShadow="True"
                                BorderColor="#fefefe"
                                Padding="13,3">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding IsAddQuantityCommand}"
+                                                      CommandParameter="sub"/>
+                            </Frame.GestureRecognizers>
                             <Label Text="-"
                                    TextColor="#000000"
                                    FontSize="16" />
