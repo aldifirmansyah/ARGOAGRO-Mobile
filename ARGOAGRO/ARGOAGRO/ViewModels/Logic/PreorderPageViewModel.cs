@@ -33,6 +33,13 @@ namespace ARGOAGRO.ViewModels
             set { SetProperty(ref _subtotal, value); }
         }
 
+        private string _subtotalStr;
+        public string SubtotalStr
+        {
+            get { return _subtotalStr; }
+            set { SetProperty(ref _subtotalStr, value); }
+        }
+
         public DelegateCommand EnterShoppingCartCommand => new DelegateCommand(() =>
         {
             _navigationService.NavigateAsync("/MainPage/NavigationPage/HomePage");
@@ -55,6 +62,7 @@ namespace ARGOAGRO.ViewModels
         public PreorderPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
+            SubtotalStr = "Rp0";
         }
 
         public override void OnNavigatedTo(INavigationParameters param)
@@ -67,7 +75,7 @@ namespace ARGOAGRO.ViewModels
         private void updateSubtotal()
         {
             Subtotal = Product.UnitPrice * OrderQuantity;
-            Debug.WriteLine("88888888 subtotal: " + Subtotal);
+            SubtotalStr = String.Format("Rp{0:n0}", Subtotal).Replace(",", ".");
         }
     }
 }

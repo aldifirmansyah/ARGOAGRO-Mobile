@@ -243,7 +243,7 @@
                         <Label Text="Subtotal: "
                                TextColor="#ffffff"
                                FontSize="18"/>
-                        <Label Text="{Binding Product.Price}"
+                        <Label Text="{Binding SubtotalStr}"
                                TextColor="#B8E68A"
                                FontSize="18"/>
                     </StackLayout>
