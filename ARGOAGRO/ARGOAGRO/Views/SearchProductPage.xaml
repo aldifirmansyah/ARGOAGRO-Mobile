@@ -14,8 +14,8 @@
                RelativeLayout.YConstraint=
                "{ConstraintExpression Type=RelativeToParent,
                                       Property=Height,
-                                      Factor=1,
-                                      Constant=-400}"/>
+                                      Factor=0.05,
+                                      Constant=200}"/>
         
         
         <abstractions:RoundedBoxView IsVisible="{Binding BerasResultVisibility}"
@@ -250,7 +250,7 @@
                HeightRequest="180"
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
                                                                  Property=Height,
-                                                                 Factor=0.1}"
+                                                                 Factor=0.05}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
                                                                  Property=Width,
                                                                  Factor=0.5,
