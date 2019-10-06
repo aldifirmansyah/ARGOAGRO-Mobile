@@ -106,9 +106,6 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="CenterAndExpand"
                              Margin="0,20">
-                    <Label Text="Rp."
-                           FontSize="36"
-                           TextColor="#000000"/>
                     <Label Text="{Binding Product.Price}"
                            FontSize="36"
                            TextColor="#000000"/>

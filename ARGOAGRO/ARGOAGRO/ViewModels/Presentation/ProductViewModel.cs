@@ -24,7 +24,7 @@ namespace ARGOAGRO.ViewModels.Presentation
         public int Discount { get; set; }
 
         public string Price {
-            get { return String.Format("{0:n0}", UnitPrice).Replace(",", "."); ; }        
+            get { return String.Format("Rp{0:n0}", UnitPrice).Replace(",", "."); ; }        
         }
     }
 }

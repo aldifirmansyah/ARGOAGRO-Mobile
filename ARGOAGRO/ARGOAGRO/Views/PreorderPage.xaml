@@ -70,9 +70,6 @@
                     <StackLayout Grid.Row="2"
                                  Grid.Column="1" 
                                  Orientation="Horizontal">
-                        <Label Text="Harga: Rp."
-                               TextColor="#ffffff"
-                               FontSize="14"/>
                         <Label Text="{Binding Product.Price}" 
                                TextColor="#ffffff"
                                FontSize="14"/>
@@ -238,10 +235,7 @@
                         <Label Text="Subtotal: "
                                TextColor="#ffffff"
                                FontSize="18"/>
-                        <Label Text="Rp."
-                               TextColor="#B8E68A"
-                               FontSize="18"/>
-                        <Label Text="{Binding Product.UnitPrice, StringFormat='{0:n}'}"
+                        <Label Text="{Binding Product.Price}"
                                TextColor="#B8E68A"
                                FontSize="18"/>
                     </StackLayout>
